@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,8 +9,8 @@
       src="https://kit.fontawesome.com/b0edde79cb.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../../statics/css/home.css" />
-    <link rel="stylesheet" href="../../statics/css/main.css" />
+    <link rel="stylesheet" href="{%static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/home.css' %}" /> 
     
   </head>
   <body>
@@ -48,10 +49,10 @@
     </header>
     <section class="slider">
       <div class="slides">
-        <div id="slide1"><img src="./images/p1.jpg" alt="" /></div>
-        <div id="slide2"><img src="./images/p2.jpg" alt="" /></div>
-        <div id="slide3"><img src="./images/p3.jpg" alt="" /></div>
-        <div id="slide4"><img src="./images/p4.jpg" alt="" /></div>
+        <div id="slide1"><img src="{% static './images/p1.jpg'%}" alt="" /></div>
+        <div id="slide2"><img src="{% static './images/p2.jpg'%}" alt="" /></div>
+        <div id="slide3"><img src="{% static './images/p3.jpg'%}" alt="" /></div>
+        <div id="slide4"><img src="{% static './images/p4.jpg'%}" alt="" /></div>
       </div>
       <div class="slide-button">
         <i class="fa-solid fa-circle"></i>
