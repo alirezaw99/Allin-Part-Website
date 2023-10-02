@@ -2,7 +2,7 @@
 header .header {
   text-align: center;
   width: auto;
-  height: 300px;
+  height: 350px;
   background-color: #990000;
   color: white;
   margin: 10px 10px 0 10px;
@@ -93,8 +93,37 @@ nav .nav-left .search-bar {
 }
 
 /* SLIDER STYLES */
+.slider .slides .active {
+  display: block;
+}
 
-.slider .slides .slide img {
-  width: 100%;
+.slider {
+  position: relative;
+}
+
+.slides .slide {
   display: none;
+}
+
+.slider .slides img {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 650px;
+}
+
+.slider .slide-button {
+  position: absolute;
+  right: 13%;
+  bottom: 5%;
+  color: white;
+}
+
+.slider .slide-button i {
+  margin: 5px;
+}
+
+.slider .slide-button i:hover {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
