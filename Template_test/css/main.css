@@ -70,7 +70,7 @@ body {
 
 .dropdown:hover > .dropdown-menu {
   display: block;
-} 
+}
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #700000;
@@ -85,7 +85,6 @@ body {
 }
 .dropdown-menu-custom2 {
   background-color: #a42e2e;
-
 }
 
 /* Search Area */
@@ -104,4 +103,44 @@ body {
 .custom-btn:active {
   background-color: white;
   color: #990000;
+}
+
+/* Categories Section */
+.category-cards {
+ 
+  white-space: nowrap;
+  overflow-y: hidden !important;
+
+  flex-wrap: nowrap;
+  display: flex;
+  align-items: flex-start;
+}
+
+.category-cards img {
+  max-width: 125px;
+  max-height: 125px;
+}
+
+.card-custom {
+  width: 125px;
+  height: 185px;
+  border: none;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: black;
+}
+.card-title a:hover {
+  color: #990000 ;
+  font-weight: bold;
+}
+
+.card-image {
+  border: 1px solid black;
+  border-radius: 100px;
+}
+
+.card-title a:hover > .card-image {
+  border: 2px solid #990000;
 }
