@@ -7,6 +7,7 @@ body {
   font-family: vazir;
 }
 
+
 /* NavBar */
 .custom-brand,
 .custom-brand:hover {
@@ -149,17 +150,17 @@ body {
 
 /* Discount Section */
 
-.slider-wraper {
-  background-color: #a42e2e;
-  border-radius: 20px;
-}
 .swiper-slide {
   height: auto !important;
   margin-left: 10px !important;
   border-radius: 20px;
 }
+.slider-wraper-custom {
+  background-color: #a42e2e;
+  border-radius: 20px;
+}
 
-.swiper-container {
+.swiper-container-custom {
   background-color: #a42e2e;
 }
 
@@ -199,4 +200,14 @@ body {
   background-color: #ffffff;
   border-radius: 50%;
   border: 3px medium black;
+}
+
+/* Other Pruducts */
+.slider-wraper-custom2 {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.swiper-container-custom2 {
+  background-color: #f1f1f1;
 }
