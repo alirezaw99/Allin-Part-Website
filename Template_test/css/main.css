@@ -115,12 +115,11 @@ body {
   align-items: flex-start;
 }
 
-.category-card:hover  .cat-link{
+.category-card:hover .cat-link {
   /* border: 2px solid #990000  */
   color: #990000;
   font-size: 1.4rem;
-
-  } 
+}
 .category-card:hover .card-image {
   border: 2px solid #990000;
 }
@@ -149,3 +148,55 @@ body {
 }
 
 /* Discount Section */
+
+.slider-wraper {
+  background-color: #a42e2e;
+  border-radius: 20px;
+}
+.swiper-slide {
+  height: auto !important;
+  margin-left: 10px !important;
+  border-radius: 20px;
+}
+
+.swiper-container {
+  background-color: #a42e2e;
+}
+
+.swiper-slide {
+  text-align: center;
+}
+
+.card-header {
+  color: #990000;
+  font-size: 1.1rem;
+}
+.actual-price {
+  color: red;
+  text-decoration: line-through;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+
+:root {
+  --swiper-navigation-size: 50px;
+}
+.swiper-nav-btn {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-nav-btn {
+  height: 32px;
+  width: 32px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 3px medium black;
+}
