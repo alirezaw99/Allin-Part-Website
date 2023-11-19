@@ -1,0 +1,40 @@
+/* Categories Section */
+.category-cards {
+  white-space: nowrap;
+  overflow-y: hidden !important;
+
+  flex-wrap: nowrap;
+  display: flex;
+  align-items: flex-start;
+}
+
+.category-card:hover .cat-link {
+  color: #990000;
+  font-size: 1.4rem;
+}
+.category-card:hover .card-image {
+  border: 2px solid #990000;
+}
+
+.category-cards img {
+  max-width: 125px;
+  max-height: 125px;
+}
+
+.card-custom {
+  width: 140px;
+  height: 185px;
+  border: none;
+}
+
+.cat-link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-image {
+  border: 1px solid black;
+  border-radius: 100px;
+  width: 125px;
+  height: 125px;
+}
