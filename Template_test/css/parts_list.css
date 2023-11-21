@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.header-text {
+  text-wrap: nowrap;
+}
+
+.sidebar-wraper {
+  border: 1px solid #990000;
+  border-radius: 20px;
+}
+
+.form-check {
+  padding: 15px 0px;
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    margin-right: auto;
+    margin-left: 100px;
+  }
+}
