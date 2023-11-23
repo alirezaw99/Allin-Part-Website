@@ -21,6 +21,15 @@ body {
   padding: 15px 0px;
 }
 
+#filtercollapse {
+  width: 100vmax !important;
+  height: 100vmax !important;
+}
+
+.form-check-input {
+  margin-inline: 10px !important;
+}
+
 @media (min-width: 1200px) {
   .cards {
     margin-right: auto;
