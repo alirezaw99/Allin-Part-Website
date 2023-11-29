@@ -1,179 +1,23 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Allin Part</title>
+{% extends 'base.html' %}
+{% load static %} 
 
-    <!-- Bootstrap 5 CSS CDN-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
-      integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv"
-      crossorigin="anonymous"
-    />
+{% block cssFiles %}
+
+{% comment %}
+  linked css files related to this page
+  {% endcomment %}
 
     <!--  CSS Files -->
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/parts_list.css" />
+    <link rel="stylesheet" href="{% static './css/main.css' %}" />
+    <link rel="stylesheet" href="{% static './css/parts_list.css' %}" />
 
-    <!-- Font -->
-    <script
-      src="https://kit.fontawesome.com/8052226cc1.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <div class="container sticky-top pt-4">
-      <nav
-        class="navbar navbar-expand-lg navbar-nav navbar-custom"
-        style="background-color: #990000"
-      >
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler navbar-toggler-custom"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span> <i class="fa-solid fa-burger custom-brand"></i></span>
-          </button>
-          <a class="navbar-brand custom-brand px-2" href="#">Allin Part</a>
+    {% endblock %}
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown nav-item-custom">
-                <a
-                  href="#"
-                  class="nav-link dropdown-toggle"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  >دسته بندی محصولات</a
-                >
-                <ul class="dropdown-menu dropdown-menu-custom p-1">
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item"
-                      >لباسشویی اتوماتیک &raquo;</a
-                    >
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
+    {% block body %}
 
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item">یخچال و فریزر &raquo;</a>
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item">ظرفشویی &raquo;</a>
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
-
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item">اکسسوری &raquo;</a>
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item">لباسشویی دوقلو &raquo;</a>
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item">ساید بای ساید &raquo;</a>
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
-                  <li class="p-1">
-                    <a href="#" class="dropdown-item">جاروبرقی &raquo;</a>
-                    <ul class="submenu dropdown-menu dropdown-menu-custom2">
-                      <li><a href="#" class="dropdown-item">پاکشوما</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                      <li><a href="#" class="dropdown-item">کندی</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item nav-item-custom">
-                <a href="http://127.0.0.1:5500/contact_us.html" class="nav-link"
-                  >تماس با ما</a
-                >
-              </li>
-              <li class="nav-item nav-item-custom">
-                <a href="http://127.0.0.1:5500/about_us.html" class="nav-link"
-                  >درباره ما</a
-                >
-              </li>
-            </ul>
-          </div>
-          <p class="d-inline-flex gap-1 m-0">
-            <button
-              class="btn search-btn-custom"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseSearch"
-              aria-expanded="false"
-              aria-controls="collapseSearch"
-            >
-              <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-            </button>
-          </p>
-          <div class="collapse search-area p-0" id="collapseSearch">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success custom-btn" type="submit">
-                جستجو
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </div>
+    {% comment %}
+    the body part goes here
+    {% endcomment %}
 
     <div class="container header-text">
       <div class="p-3 my-5">
@@ -490,53 +334,11 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3">
-      <div
-        class="container d-flex flex-wrap align-items-center justify-content-center py-3 my-4 border-top"
-      >
-        <p class="col-md-4 mb-0 pb-3 justify-content-end text-body-secondary">
-          2023 Allin Part, Inc ©
-        </p>
-        <ul class="nav col-md-4 pb-3 justify-content-center">
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">خانه</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary"
-              >نحوه ثبت سفارش</a
-            >
-          </li>
+    {% endblock %}
 
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">درباره ما</a>
-          </li>
-        </ul>
+    {% block jsFiles %}
+    {% comment %}
+      javascript files related to this page gose here
+    {% endcomment %}
 
-        <a
-          href="/"
-          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
-        >
-          <img
-            class="bi me-2"
-            src="./images/allin-logo.jpg"
-            width="100"
-            height="100"
-          />
-        </a>
-      </div>
-    </footer>
-  </body>
-
-  <!-- Bootstrap 5 JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js
-  "></script>
-
-  <!-- Navbar JS -->
-  <script src="./js/navbar.js"></script>
-</html>
+  {% endblock %}
