@@ -46,7 +46,7 @@
           >
             <span> <i class="fa-solid fa-burger custom-brand"></i></span>
           </button>
-          <a class="navbar-brand custom-brand px-2" href="{% url 'home' %}">Allin Part</a>
+          <a class="navbar-brand custom-brand px-2" href="{% url 'main:home' %}">Allin Part</a>
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -139,12 +139,12 @@
                 </ul>
               </li>
               <li class="nav-item nav-item-custom">
-                <a href="{% url 'contact' %}" class="nav-link"
+                <a href="{% url 'main:contact' %}" class="nav-link"
                   >تماس با ما</a
                 >
               </li>
               <li class="nav-item nav-item-custom">
-                <a href="{% url 'about' %}" class="nav-link"
+                <a href="{% url 'main:about' %}" class="nav-link"
                   >درباره ما</a
                 >
               </li>
@@ -191,21 +191,21 @@
         </p>
         <ul class="nav col-md-4 pb-3 justify-content-center">
           <li class="nav-item">
-            <a href="{% url 'home' %}" class="nav-link px-2 text-body-secondary">خانه</a>
+            <a href="{% url 'main:home' %}" class="nav-link px-2 text-body-secondary">خانه</a>
           </li>
           <li class="nav-item">
-            <a href="{% url 'contact' %}" class="nav-link px-2 text-body-secondary"
+            <a href="{% url 'main:contact' %}" class="nav-link px-2 text-body-secondary"
               >نحوه ثبت سفارش</a
             >
           </li>
 
           <li class="nav-item">
-            <a href="{% url 'about' %}" class="nav-link px-2 text-body-secondary">درباره ما</a>
+            <a href="{% url 'main:about' %}" class="nav-link px-2 text-body-secondary">درباره ما</a>
           </li>
         </ul>
 
         <a
-          href="{% url 'home' %}"
+          href="{% url 'main:home' %}"
           class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
         >
           <img

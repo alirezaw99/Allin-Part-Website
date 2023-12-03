@@ -64,9 +64,29 @@ the body part goes here
   <div class="container-md container-fluid">
     <div class="category-cards card-group row row-cols-7">
       <div
+      class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
+    >
+      <a href="#" class="card-link">
+        <div class="card card-custom align-items-center">
+          <div class="card-image p-4">
+            <img
+              src="{% static './images/categories/dishwasher light.jpg' %}"
+              class="card-img-top img-fluid"
+              alt="..."
+            />
+          </div>
+          <div class="card-body pb-0">
+            <h5 class="card-title text-center">
+              <a class="cat-link" href="#">ظرفشویی</a>
+            </h5>
+          </div>
+        </div>
+      </a>
+    </div>
+      <div
         class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
       >
-        <a href="#" class="card-link">
+        <a href="{% url 'main:categories' 'auto-washing-machine' %}" class="card-link">
           <div class="card card-custom align-items-center">
             <div class="card-image p-4 ">
               <img
@@ -77,7 +97,7 @@ the body part goes here
             </div>
             <div class="card-body pb-0">
               <h5 class="card-title text-center">
-                <a class="cat-link" href="#">لباسشویی اتوماتیک</a>
+                <a class="cat-link" href="{% url 'main:categories' 'auto-washing-machine' %}" class="card-link">لباسشویی اتوماتیک</a>
               </h5>
             </div>
           </div>
@@ -103,26 +123,7 @@ the body part goes here
           </div>
         </a>
       </div>
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="#" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4">
-              <img
-                src="{% static './images/categories/dishwasher light.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0">
-              <h5 class="card-title text-center">
-                <a class="cat-link" href="#">ظرفشویی</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
+     
       <div
         class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
       >
