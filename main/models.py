@@ -32,7 +32,7 @@ class Auto_Washing_Machine_Part(models.Model):
     used_models = models.ForeignKey(Auto_Washing_Machine_Model, on_delete=models.SET_NULL, null=True)
     price = models.PositiveIntegerField()
     #picture = models.ImageField()
-    description = models.TextField()
+    description = models.TextField(null=True)
     in_stock = models.BooleanField(default=False)
     is_onsale = models.BooleanField(default=False)
     discounted_price = models.PositiveIntegerField(default=0)
