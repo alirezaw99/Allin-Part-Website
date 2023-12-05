@@ -13,15 +13,8 @@ def contact_view(request):
 def about_view(request):
     return render(request, 'about_us.html')
 
-def categories_view(request, slug):
-    # title = Category.objects.get(slug=cat_name)
-    cat_name = get_object_or_404(Category, slug=slug)  #this throw a 404 if the slug dosn't match the url
-    brands = Category.objects.get(id=cat_name.id).brands.all()
-    
-    parts = Part.objects.filter(category=cat_name)
-    
-    context = {'cat_name':cat_name,'brands':brands}
-    return render(request, 'categories.html', context)
+def categories_view(request):
+    return render(request, 'categories.html')
 
 def parts_list_view(request):
     return render(request, 'parts_list.html')
