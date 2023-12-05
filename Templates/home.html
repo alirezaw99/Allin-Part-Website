@@ -66,7 +66,7 @@ the body part goes here
       <div
       class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
     >
-      <a href="#" class="card-link">
+      <a href="{% url 'main:categories' 'dishwasher' %}" class="card-link">
         <div class="card card-custom align-items-center">
           <div class="card-image p-4">
             <img
@@ -77,7 +77,7 @@ the body part goes here
           </div>
           <div class="card-body pb-0">
             <h5 class="card-title text-center">
-              <a class="cat-link" href="#">ظرفشویی</a>
+              <a class="cat-link" href="{% url 'main:categories' 'dishwasher' %}">ظرفشویی</a>
             </h5>
           </div>
         </div>
