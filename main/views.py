@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Brand, Category, Part
+from .models import *
+
 
 # Create your views here.
 
@@ -16,8 +17,10 @@ def about_view(request):
 def categories_view(request):
     return render(request, 'categories.html')
 
-def parts_list_view(request):
-    return render(request, 'parts_list.html')
+def parts_list_view(request, slug):
+    cat_name = get_object_or_404(Category, slug=slug)
+    context = {'cat_name':cat_name}
+    return render(request, 'parts_list.html', context)
 
 def parts_detail_view(request):
     return render(request, 'part_single.html')
