@@ -19,7 +19,10 @@ def categories_view(request):
 
 def parts_list_view(request, slug):
     cat_name = get_object_or_404(Category, slug=slug)
-    context = {'cat_name':cat_name}
+    parts = Part.objects.get_queryset().filter(category=cat_name)
+    sub_cat = Sub_Category.objects.get_queryset().filter(category=cat_name)
+    brands = Model.objects.filter(category=cat_name)
+    context = {'cat_name':cat_name, 'parts':parts, 'sub_cats':sub_cat, 'brands':brands}
     return render(request, 'parts_list.html', context)
 
 def parts_detail_view(request):

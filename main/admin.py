@@ -11,8 +11,8 @@ class CategoryAdmin(admin.ModelAdmin):
     
 @admin.register(Sub_Category)
 class Sub_CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name_fa', 'name_en']
-    prepopulated_fields  = {'slug':['name_en']}
+    list_display = ['name_fa', 'category', 'name_en']
+    prepopulated_fields  = {'slug':['name_en', 'category']}
     
 @admin.register(Model)
 class Admin(admin.ModelAdmin):
@@ -25,3 +25,4 @@ class PartAdmin(admin.ModelAdmin):
     list_display = ['name', 'part_number', 'is_onsale']
     list_filter = ['used_models', 'is_onsale', 'in_stock']
     search_fields = ['name', 'part_number']
+    prepopulated_fields = {'slug':['part_number']}
