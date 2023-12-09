@@ -53,7 +53,7 @@ class Part(models.Model):
     sub_category = models.ForeignKey(Sub_Category, on_delete=models.CASCADE)
     used_models = models.ManyToManyField(Model)
     price = models.PositiveIntegerField()
-    #picture = models.ImageField()
+    image = models.ImageField(upload_to=f'images/', default='images/default.png')
     description = models.TextField(null=True, blank=True)
     in_stock = models.BooleanField(default=False)
     is_onsale = models.BooleanField(default=False)
