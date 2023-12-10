@@ -6,7 +6,10 @@ from .models import *
 # Create your views here.
 
 def home_view(request):
-    return render(request, 'home.html')
+    category = Category.objects.all()
+    context = {'category':category}
+    
+    return render(request, 'home.html', context)
 
 def contact_view(request):
     return render(request, 'contact_us.html')
@@ -23,6 +26,7 @@ def parts_list_view(request, slug):
     sub_cat = Sub_Category.objects.get_queryset().filter(category=cat_name)
     brands = Model.objects.filter(category=cat_name)
     context = {'cat_name':cat_name, 'parts':parts, 'sub_cats':sub_cat, 'brands':brands}
+    
     return render(request, 'parts_list.html', context)
 
 def parts_detail_view(request):

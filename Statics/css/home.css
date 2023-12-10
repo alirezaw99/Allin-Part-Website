@@ -7,13 +7,19 @@
   display: flex;
   align-items: flex-start;
 }
+.card-image {
+  background-color: white;
+  border-radius: 100px;
+  width: 125px;
+  height: 125px;
+}
 
 .category-card:hover .cat-link {
   color: #990000;
   font-size: 1.4rem;
 }
 .category-card:hover .card-image {
-  border: 2px solid #990000;
+  border: 3px solid #990000
 }
 
 .category-cards img {
@@ -32,12 +38,6 @@
   color: black;
 }
 
-.card-image {
-  border: 1px solid black;
-  border-radius: 100px;
-  width: 125px;
-  height: 125px;
-}
 
 /* Discount Section */
 

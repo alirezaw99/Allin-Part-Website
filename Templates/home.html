@@ -63,147 +63,26 @@ the body part goes here
 <section id="categories" class="my-4">
   <div class="container-md container-fluid">
     <div class="category-cards card-group row row-cols-7">
+      {% for cat in category %}
       <div
-      class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-    >
-      <a href="{% url 'main:categories' 'dishwasher' %}" class="card-link">
+      class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
+      <a href="{% url 'main:categories' cat.slug %}" class="card-link">
         <div class="card card-custom align-items-center">
-          <div class="card-image p-4">
+          <div class="card-image p-4" >
             <img
-              src="{% static './images/categories/dishwasher light.jpg' %}"
-              class="card-img-top img-fluid"
-              alt="..."
-            />
+              src="{{cat.icon.url}}"
+              class="card-img-top img-fluid "
+              alt="..."/>
           </div>
           <div class="card-body pb-0">
             <h5 class="card-title text-center">
-              <a class="cat-link" href="{% url 'main:categories' 'dishwasher' %}">ظرفشویی</a>
+              <a class="cat-link" href="{% url 'main:categories' cat.slug %}">{{cat.name_fa}}</a>
             </h5>
           </div>
         </div>
       </a>
     </div>
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="{% url 'main:categories' 'auto-washing-machine' %}" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4 ">
-              <img
-                src="{% static './images/categories/washing machine light.png' %}"
-                class="card-img-top img-fluid "
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0">
-              <h5 class="card-title text-center">
-                <a class="cat-link" href="{% url 'main:categories' 'auto-washing-machine' %}" class="card-link">لباسشویی اتوماتیک</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="#" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4">
-              <img
-                src="{% static './images/categories/twin.png' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0 mx-auto">
-              <h5 class="card-title text-center">
-                <a class="cat-link" href="#">لباسشویی دوقلو</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
-     
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="#" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4">
-              <img
-                src="{% static './images/categories/fridge light.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0">
-              <h5 class="card-title text-center">
-                <a class="cat-link" href="#"> یخچال و فریزر</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="#" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4">
-              <img
-                src="{% static './images/categories/side light.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0">
-              <h5 class="card-title text-center">
-                <a class="cat-link" href="#">ساید بای ساید</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="#" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4">
-              <img
-                src="{% static './images/categories/vacuum light.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0">
-              <h5 class="card-title text-center">
-                <a class="cat-link" href="#">جاروبرقی</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div
-        class="col category-card d-flex align-items-center justify-content-center p-0 mx-2"
-      >
-        <a href="#" class="card-link">
-          <div class="card card-custom align-items-center">
-            <div class="card-image p-4">
-              <img
-                src="{% static './images/categories/bag.png' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-            </div>
-            <div class="card-body pb-0">
-              <h5 class="card-title text-cetner">
-                <a class="cat-link" href="#">لوازم جانبی</a>
-              </h5>
-            </div>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

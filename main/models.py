@@ -13,6 +13,7 @@ class Brand(models.Model):
 class Category(models.Model):
     name_fa = models.CharField(max_length=255)
     name_en = models.CharField(max_length=255)
+    icon = models.ImageField(upload_to='category_icons', default='images/default.png')
     slug = models.SlugField(null=False)
     created_date = models.DateTimeField(auto_now_add=True)
     edited_date = models.DateTimeField(auto_now=True)
@@ -27,6 +28,7 @@ class Sub_Category(models.Model):
     name_fa = models.CharField(max_length=255)
     name_en = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    icon = models.ImageField(upload_to='category_icons', default='images/default.png')
     slug = models.SlugField(null=False)
     created_date = models.DateTimeField(auto_now_add=True)
     edited_date = models.DateTimeField(auto_now=True)
