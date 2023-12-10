@@ -1,4 +1,5 @@
 from django.db import models
+from .misc import get_upload_path
 
 # Create your models here.
 class Brand(models.Model):
@@ -39,7 +40,7 @@ class Sub_Category(models.Model):
 class Model(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
     edited_date = models.DateTimeField(auto_now=True)
     
@@ -53,7 +54,7 @@ class Part(models.Model):
     sub_category = models.ForeignKey(Sub_Category, on_delete=models.CASCADE)
     used_models = models.ManyToManyField(Model)
     price = models.PositiveIntegerField()
-    image = models.ImageField(upload_to=f'images/', default='images/default.png')
+    image = models.ImageField(upload_to=get_upload_path, default='images/default.png')
     description = models.TextField(null=True, blank=True)
     in_stock = models.BooleanField(default=False)
     is_onsale = models.BooleanField(default=False)

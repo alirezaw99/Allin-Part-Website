@@ -23,6 +23,6 @@ class Admin(admin.ModelAdmin):
 @admin.register(Part)
 class PartAdmin(admin.ModelAdmin):
     list_display = ['name', 'part_number', 'is_onsale']
-    list_filter = ['used_models', 'is_onsale', 'in_stock']
+    list_filter = ['category', 'sub_category', 'is_onsale']
     search_fields = ['name', 'part_number']
     prepopulated_fields = {'slug':['part_number']}
