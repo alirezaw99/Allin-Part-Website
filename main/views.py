@@ -7,7 +7,8 @@ from .models import *
 
 def home_view(request):
     category = Category.objects.all()
-    context = {'category':category}
+    parts = Part.objects.filter(popular=1)
+    context = {'category':category, 'parts':parts}
     
     return render(request, 'home.html', context)
 

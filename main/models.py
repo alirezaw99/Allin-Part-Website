@@ -58,6 +58,7 @@ class Part(models.Model):
     price = models.PositiveIntegerField()
     image = models.ImageField(upload_to=get_upload_path, default='images/default.png')
     description = models.TextField(null=True, blank=True)
+    popular = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=False)
     is_onsale = models.BooleanField(default=False)
     discoundet_price = models.PositiveIntegerField(default=0)
