@@ -48,7 +48,9 @@
           >
             <span> <i class="fa-solid fa-burger custom-brand"></i></span>
           </button>
-          <a class="navbar-brand custom-brand px-2" href="{% url 'main:home' %}">Allin Part</a>
+          <a class="navbar-brand custom-brand px-2" href="{% url 'main:home' %}">
+            <img class='logo ms-2' src="{% static '/images/allin-logo.png' %}" alt="..." height="35" width="35"/>
+          </a>
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">

@@ -37,7 +37,7 @@ class Sub_Category(models.Model):
         verbose_name_plural = "Sub Categories"
 
     def __str__(self):
-        return f'{self.name_fa} {self.category}'
+        return f' {self.category} / {self.name_fa}'
     
 class Model(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
