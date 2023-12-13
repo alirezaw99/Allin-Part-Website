@@ -8,8 +8,8 @@
   align-items: flex-start;
 }
 .card-image {
-  /* background-color: #FFFAF0; */
-  border : 1px solid black;
+  background-color: #F9F9F9;
+  /* border : 1px solid black; */
   border-radius: 100px;
   width: 125px;
   height: 125px;
