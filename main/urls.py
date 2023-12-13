@@ -25,7 +25,7 @@ urlpatterns = [
     path('' ,home_view, name='home'),
     path('contact_us/', contact_view, name='contact'),
     path('about_us/', about_view, name='about'),
-    # path('categories/<slug:slug>', categories_view, name='categories'),
+    path('search/', search_result_view, name='search'),
     path('categories/<slug:slug>',  parts_list_view, name='categories'),
     path('part_detail/', parts_detail_view, name='part_detail'),
 ]

@@ -106,12 +106,13 @@
             </button>
           </p>
           <div class="collapse search-area p-0" id="collapseSearch">
-            <form class="d-flex" role="search">
+            <form class="d-flex" role="search" action="{% url 'main:search' %}">
               <input
                 class="form-control me-2"
                 type="search"
                 placeholder="search"
                 aria-label="Search"
+                name='search'
               />
               <button class="btn btn-outline-success custom-btn" type="submit">
                 جستجو

@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block cssFiles %}
+
+{% comment %}
+  linked css files related to this page
+  {% endcomment %}
+
+    <!--  CSS Files -->
+    <link rel="stylesheet" href="{% static './css/main.css' %}" />
+    <link rel="stylesheet" href="{% static './css/parts_list.css' %}" />
+
+    {% endblock %}
+
+    {% block body %}
+
+    {% comment %}
+    the body part goes here
+    {% endcomment %}
+
+
+    <div class="container header-text">
+        <div class="p-3 my-5">
+          <h3>
+            <span class="p-3 border-bottom rounded-5"> نتیجه جستجو : "{{search_part}}"</span>
+          </h3>
+        </div>
+      </div>
+      
+      
+      {% comment %}
+        
+     <!-- Mobile Filters -->
+     <div class="container-fluid d-lg-none py-2">
+      <div class="d-flex justify-content-between gap-1">
+        <button
+          class="btn"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+        >
+          <strong>فیلتر</strong><i class="fa-solid fa-filter px-2"></i>
+        </button>
+        <button
+          class="btn btn-secondary"
+          data-bs-toggle="collapse"
+          href="#ordercollapse"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          order by
+        </button>
+      </div>
+      <div
+        class="offcanvas offcanvas-start"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        id="staticBackdrop"
+        aria-labelledby="staticBackdropLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel">
+            فیلتر محصولات
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  فیلتر بر اساس نوع قطعه
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  {% if main_cat != cat_name %}
+                <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                  <a href="{% url 'main:categories' main_cat.slug %}" class='text-decoration-none text-dark'>همه قطعات {{main_cat}}</a>
+                </div>
+                {% else %}
+                <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                  <strong>
+                  <a href="{% url 'main:categories' main_cat.slug %}" class='text-decoration-none text-danger'>همه قطعات {{main_cat}}</a>
+                  </strong>
+                </div>
+                {% endif %}
+                  <hr>
+                  {% for sub_cat in sub_cats %}
+                  {% if sub_cat != cat_name %}
+                  <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                    <a href="{% url 'main:categories' sub_cat.slug %}" class='text-decoration-none text-dark'>{{sub_cat.name_fa}}</a>
+                  </div>
+                  {% else %}
+                  <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                    <strong>
+                    <a href="{% url 'main:categories' sub_cat.slug %}" class='text-decoration-none text-danger'>{{sub_cat.name_fa}}</a>
+                    </strong>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="ordercollapse">
+        <div id="mobilefilter">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+  
+    <div class="row">
+      <!-- Filters SideBar -->
+      <div
+        id="filtersidebar"
+        class="col-2 d-none d-lg-inline-grid justify-content-center p-0 h-100">
+        <p class="text-center border-bottom pb-2">
+          <strong>اعمال فیلتر</strong>
+        </p>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                بر اساس نوع قطعه
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                {% if main_cat != cat_name %}
+                <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                  <a href="{% url 'main:categories' main_cat.slug %}" class='text-decoration-none text-dark'>همه قطعات {{main_cat}}</a>
+                </div>
+                {% else %}
+                <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                  <strong>
+                  <a href="{% url 'main:categories' main_cat.slug %}" class='text-decoration-none text-danger'>همه قطعات {{main_cat}}</a>
+                  </strong>
+                </div>
+                {% endif %}
+                <hr>
+                {% for sub_cat in sub_cats %}
+                {% if sub_cat != cat_name %}
+                <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                  <a href="{% url 'main:categories' sub_cat.slug %}" class='text-decoration-none text-dark'>{{sub_cat.name_fa}}</a>
+                </div>
+                {% else %}
+                <div class='typefilter justify-content-center d-flex py-1 my-1'>
+                  <strong>
+                  <a href="{% url 'main:categories' sub_cat.slug %}" class='text-decoration-none text-danger'>{{sub_cat.name_fa}}</a>
+                  </strong>
+                </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item"></div>
+        </div>
+      </div>
+
+    {% endcomment %}
+
+      <!-- Cards -->
+      <div class="cards col-12 col-lg-9">
+        <div class="container-fluid cards-container">
+          <div
+            class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1 g-md-3 g-lg-5">
+            {% for part in parts %}
+            <div class="col">
+              <a class="card-link text-decoration-none text-dark" href="#">
+              <div class=" card text-center h-100">
+                  
+                    <img
+                      src="{{part.image.url}}"
+                      class="card-img-top img-fluid p-1"
+                      alt="failed to load image"/>
+                  
+                  <div class="card-body swiper-slide h-25 d-flex align-items-end justify-content-center">
+                    <div class='w-100'>
+                      <h5 class="card-title">{{part.name}} </h5>
+                      <hr />
+                      <div class="card-text">
+                        <p class="product-price mt-1">{{part.price}} تومان</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+   {% endblock %}
+
+    {% block jsFiles %}
+    {% comment %}
+      javascript files related to this page gose here
+    {% endcomment %}
+
+  {% endblock %}

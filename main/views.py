@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.db.models import Q
 from .models import *
 
 
@@ -8,6 +9,7 @@ from .models import *
 def home_view(request):
     category = Category.objects.all()
     parts = Part.objects.filter(popular=1)
+    
     context = {'category':category, 'parts':parts}
     
     return render(request, 'home.html', context)
@@ -18,8 +20,16 @@ def contact_view(request):
 def about_view(request):
     return render(request, 'about_us.html')
 
-def categories_view(request):
-    return render(request, 'categories.html')
+def search_result_view(request):
+    search_part = request.GET.get('search')
+    if search_part : 
+        parts = Part.objects.filter(Q(name__contains=search_part))
+    else :
+        parts = Part.objects.all()
+   
+    context = {'parts':parts, 'search_part':search_part}
+    
+    return render(request, 'search_result.html', context)
 
 def parts_list_view(request, slug):
     try:
