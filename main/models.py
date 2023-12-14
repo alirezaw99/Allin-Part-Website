@@ -61,7 +61,7 @@ class Part(models.Model):
     popular = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=False)
     is_onsale = models.BooleanField(default=False)
-    discoundet_price = models.PositiveIntegerField(default=0)
+    discounted_price = models.PositiveIntegerField(default=0)
     slug = models.SlugField(default="", null=False)
     created_date = models.DateTimeField(auto_now_add=True)
     edited_date = models.DateTimeField(auto_now=True)

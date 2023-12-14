@@ -225,7 +225,7 @@
           class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1 g-md-3 g-lg-5">
           {% for part in parts %}
           <div class="col">
-            <a class="card-link text-decoration-none text-dark" href="#">
+            <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' part.slug %}">
             <div class=" card text-center h-100">
                 
                   <img

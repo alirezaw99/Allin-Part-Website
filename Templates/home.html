@@ -254,7 +254,7 @@ the body part goes here
             {% if part.category == cat %}
             
               <div class=" swiper-slide ">
-                <a class="card-link text-decoration-none text-dark h-100" href="#">
+                <a class="card-link text-decoration-none text-dark h-100" href="{% url 'main:part_detail' part.slug %}">
                   <div class='card text-center p-1 h-100'>
                     <img
                       src="{{part.image.url}}"

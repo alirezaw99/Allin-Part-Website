@@ -66,30 +66,38 @@
             </div>
           </div>
           <div class="col-lg-7 part-summary d-flex-column">
-            <h1 class="p-3"><strong>المنت ظرفشویی</strong></h1>
+            <h1 class="p-3"><strong>{{part.name }}</strong></h1>
             <p class="p-2">
-              <span class="text-danger"
-                ><strong>مدل های به کار رفته : </strong></span
-              >
+              <span class="text-danger"><strong>مدل های به کار رفته : </strong>
+              </span>
               TWS-80410ST , TFI6219WT
             </p>
+            <p class='px-2'><strong>کد فنی : </strong>{{part.part_number}}</p>
 
-            <p class="px-2"><strong>ویژگی های قطعه : </strong></p>
-            <ul>
-              <li class="p-2">طول : 25 سانتی متر</li>
-              <li class="p-2">جنس : فلز</li>
-              <li class="p-2">کد فنی : 1219020004</li>
-            </ul>
-            <div class="price d-inline-flex bg-light m-5 p-5 rounded-5">
-              <h4>2,000,000 تومان</h4>
+            <p class="px-2"><strong>مشخصات محصول : </strong></p>
+            <div class=><p class=''>{{part.description}}</p></div>
+            <p class='mx-2'><strong>قیمت : </strong></p>
+            {% if part.is_onsale == 1 %}
+            <div class="h-0 price d-inline-block bg-light m-1 p-4 rounded-5 text-center">
+              <h6 class='text-decoration-line-through text-danger'>{{part.price}} تومان</h6>
+              <h4>{{part.discounted_price}} تومان</h4>
             </div>
+            {% elif part.popular == 1 %}
+            <div class="h-0 price d-inline-block bg-light m-1 p-4 rounded-5">
+              <h4>{{part.price}} تومان</h4>
+            </div>
+            {% else %}
+            <div class="h-0 price d-inline-block bg-light m-1 p-4 rounded-5">
+              <h4>استعلام بگیرید</h4>
+            </div>
+            {% endif %}
+            <p class='d-inline-block my-5'>
+              جهت ثبت سفارش ، استعلام قیمت و یا دریافت مشاوره جهت خرید
+              <a href="{% url 'main:contact' %}"> نحوه ثبت سفارش</a> را مشاهده کنید.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        جهت ثبت سفارش و یا دریافت مشاوره جهت خرید
-        <a href="#"> نحوه ثبت سفارش</a> را مشاهده کنید.
-      </p>
     </div>
 
     {% endblock %}

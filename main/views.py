@@ -48,5 +48,9 @@ def parts_list_view(request, slug):
     
     return render(request, 'parts_list.html', context)
 
-def parts_detail_view(request):
-    return render(request, 'part_single.html')
+def parts_detail_view(request, slug):
+    part = get_object_or_404(Part, slug=slug)
+    
+    context = {'part':part}
+    
+    return render(request, 'part_single.html', context)

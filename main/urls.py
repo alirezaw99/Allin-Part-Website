@@ -27,5 +27,5 @@ urlpatterns = [
     path('about_us/', about_view, name='about'),
     path('search/', search_result_view, name='search'),
     path('categories/<slug:slug>',  parts_list_view, name='categories'),
-    path('part_detail/', parts_detail_view, name='part_detail'),
+    path('part_detail/<slug:slug>', parts_detail_view, name='part_detail'),
 ]
