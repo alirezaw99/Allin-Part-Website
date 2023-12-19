@@ -91,121 +91,36 @@ the body part goes here
 <section class="">
   <div class="container-md container-fluid mt-5 pt-3">
     <div class="d-flex justify-content-between align-items-center mx-3">
-      <h2 class="m-2">پیشنهاد شگفت انگیز</h2>
-      <a class="text-dark text-decoration-none" href="#">مشاهده همه ></a>
+      <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#0047AB'>پیشنهاد</span> شگفت انگیز</storng></h2>
+      
     </div>
     <hr />
     <div class="slider-wraper slider-wraper-custom p-2 my-4 bg-gradient">
       <div class="swiper-container swiper-container-custom swiper px-5 bg-gradient">
         <div #swiperRef="#" class="slide-content mySwiper m-1">
           <div class="swiper-wrapper p-2">
+            {% for dis in discounts %}
             <div class="card swiper-slide d-flex">
               <a class="card-link text-decoration-none text-dark" href="#">
                 <div class="card-header">
                   <small class="">فروش ویژه</small>
                 </div>
                 <img
-                  src="{% static './images/2da03030007.jpg' %}"
+                  src="{{dis.image_tumbnail.url}}"
                   class="card-img-top img-fluid"
                   alt="..."
                 />
                 <div class="card-body swiper-slide">
-                  <h5 class="card-title">پمپ تخلیه مدیا</h5>
+                  <h5 class="card-title">{{dis.name}}</h5>
                   <hr />
                   <div class="card-text">
-                    <small class="actual-price">3,000,000 تومان</small>
-                    <p class="discounted-price mt-1">2,900,000 تومان</p>
+                    <small class="actual-price">{{dis.price}} تومان</small>
+                    <p class="discounted-price mt-1">{{dis.discounted_price}} تومان</p>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="card swiper-slide d-flex">
-              <div class="card-header">
-                <small class="">فروش ویژه</small>
-              </div>
-              <img src="{% static "./images/2da03010003.jpg" %}"
-              class="card-img-top img-fluid" alt="..." />
-              <div class="card-body swiper-slide">
-                <h5 class="card-title">المنت ظرفشویی</h5>
-                <hr />
-                <div class="card-text">
-                  <small class="actual-price">1,500,000 تومان</small>
-                  <p class="discounted-price mt-1">1,000,000 تومان</p>
-                </div>
-              </div>
-            </div>
-            <div class="card swiper-slide d-flex">
-              <div class="card-header">
-                <small class="">فروش ویژه</small>
-              </div>
-              <img
-                src="{% static './images/2da03030007.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-              <div class="card-body swiper-slide">
-                <h5 class="card-title">پمپ تخلیه مدیا</h5>
-                <hr />
-                <div class="card-text">
-                  <small class="actual-price">3,000,000 تومان</small>
-                  <p class="discounted-price mt-1">2,900,000 تومان</p>
-                </div>
-              </div>
-            </div>
-            <div class="card swiper-slide d-flex">
-              <div class="card-header">
-                <small class="">فروش ویژه</small>
-              </div>
-              <img
-                src="{% static './images/2da03030007.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-              <div class="card-body swiper-slide">
-                <h5 class="card-title">پمپ تخلیه مدیا</h5>
-                <hr />
-                <div class="card-text">
-                  <small class="actual-price">3,000,000 تومان</small>
-                  <p class="discounted-price mt-1">2,900,000 تومان</p>
-                </div>
-              </div>
-            </div>
-            <div class="card swiper-slide d-flex">
-              <div class="card-header">
-                <small class="">فروش ویژه</small>
-              </div>
-              <img
-                src="{% static './images/2da03030007.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-              <div class="card-body swiper-slide">
-                <h5 class="card-title">پمپ تخلیه مدیا</h5>
-                <hr />
-                <div class="card-text">
-                  <small class="actual-price">3,000,000 تومان</small>
-                  <p class="discounted-price mt-1">2,900,000 تومان</p>
-                </div>
-              </div>
-            </div>
-            <div class="card swiper-slide d-flex">
-              <div class="card-header">
-                <small class="">فروش ویژه</small>
-              </div>
-              <img
-                src="{% static './images/2da03030007.jpg' %}"
-                class="card-img-top img-fluid"
-                alt="..."
-              />
-              <div class="card-body swiper-slide">
-                <h5 class="card-title">پمپ تخلیه مدیا</h5>
-                <hr />
-                <div class="card-text">
-                  <small class="actual-price">3,000,000 تومان</small>
-                  <p class="discounted-price mt-1">2,900,000 تومان</p>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
           <div class="swiper-button-next swiper-nav-btn d-none d-md-block">
             <svg
@@ -257,7 +172,7 @@ the body part goes here
                 <a class="card-link text-decoration-none text-dark h-100" href="{% url 'main:part_detail' part.slug %}">
                   <div class='card text-center p-1 h-100'>
                     <img
-                      src="{{part.image.url}}"
+                      src="{{part.image_tumbnail.url}}"
                       class="card-img-top img-fluid p-1"
                       alt="failed to load image"/>
                   

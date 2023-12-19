@@ -33,8 +33,8 @@
             >
               <div class="swiper-wrapper">
                 {% for image in images %}  
-                <div class="swiper-slide">
-                  <img src="{{image.image.url}}" />
+                <div class="swiper-slide swiper-slide-custom">
+                  <img class='swiper-slide-custom' src="{{image.image.url}}" />
                 </div>
                 {% endfor %}
               </div>

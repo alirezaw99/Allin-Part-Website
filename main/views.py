@@ -9,8 +9,9 @@ from .models import *
 def home_view(request):
     category = Category.objects.all()
     parts = Part.objects.filter(popular=1)
+    discounts = Part.objects.filter(is_onsale=1)
     
-    context = {'category':category, 'parts':parts}
+    context = {'category':category, 'parts':parts, 'discounts':discounts}
     
     return render(request, 'home.html', context)
 
