@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='part',
             name='image',
-            field=models.ImageField(default='images/default.png', upload_to=main.misc.get_upload_path),
+            field=models.ImageField(default='images/default.png', upload_to=main.misc.get_tumbnail_upload_path),
         ),
     ]

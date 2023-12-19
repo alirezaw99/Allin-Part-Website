@@ -1,5 +1,5 @@
 from django.db import models
-from .misc import get_upload_path
+from .misc import get_tumbnail_upload_path , get_images_upload_path
 
 # Create your models here.
 class Brand(models.Model):
@@ -56,7 +56,7 @@ class Part(models.Model):
     sub_category = models.ForeignKey(Sub_Category, on_delete=models.CASCADE)
     used_models = models.ManyToManyField(Model)
     price = models.PositiveIntegerField()
-    image = models.ImageField(upload_to=get_upload_path, default='images/default.png')
+    image_tumbnail = models.ImageField(upload_to=get_tumbnail_upload_path, default='images/default.png', blank=True)
     description = models.TextField(null=True, blank=True)
     popular = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=False)
@@ -68,3 +68,7 @@ class Part(models.Model):
     
     def __str__(self):
         return self.name
+    
+class PartImage(models.Model):
+    part = models.ForeignKey(Part, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=get_images_upload_path, default='images/default.png')

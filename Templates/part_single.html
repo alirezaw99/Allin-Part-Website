@@ -32,36 +32,22 @@
               class="swiper mySwiper2 border border-4 rounded-5"
             >
               <div class="swiper-wrapper">
+                {% for image in images %}  
                 <div class="swiper-slide">
-                  <img src="./images/2da03010003.jpg" />
+                  <img src="{{image.image.url}}" />
                 </div>
-                <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </div>
+                {% endfor %}
               </div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
             <div thumbsSlider="" class="swiper mySwiper">
-              <div class="swiper-wrapper">
+              <div class="swiper-wrapper justify-content-center">
+                {% for image in images %}
                 <div class="swiper-slide">
-                  <img src="./images/2da03010003.jpg" />
+                  <img src="{{image.image.url}}" />
                 </div>
-                <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>

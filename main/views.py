@@ -50,7 +50,8 @@ def parts_list_view(request, slug):
 
 def parts_detail_view(request, slug):
     part = get_object_or_404(Part, slug=slug)
+    images = PartImage.objects.filter(part=part)
     
-    context = {'part':part}
+    context = {'part':part, 'images':images}
     
     return render(request, 'part_single.html', context)
