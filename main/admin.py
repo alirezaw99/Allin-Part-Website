@@ -25,8 +25,8 @@ class PartImageAdmin(admin.StackedInline):
 
 @admin.register(Part)
 class PartAdmin(admin.ModelAdmin):
-    list_display = ['name', 'part_number', 'is_onsale']
-    list_filter = ['category', 'sub_category', 'is_onsale']
+    list_display = ['name', 'part_number', 'is_onsale', 'popular']
+    list_filter = ['category', 'is_onsale', 'popular']
     search_fields = ['name', 'part_number']
     prepopulated_fields = {'slug':['part_number']}
     inlines = [PartImageAdmin]

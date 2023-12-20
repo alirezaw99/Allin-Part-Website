@@ -54,7 +54,21 @@
 
 .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 450px;
+  max-height: 450px;
   object-fit: cover;
+}
+
+.swiper_tumbnail{
+  height :100px !important;
+  width: 100px !important;
+}
+
+.pricebox{
+  background: hsla(5, 100%, 38%, 1);
+  background: linear-gradient(360deg, hsla(5, 100%, 38%, 1) 0%, hsla(348, 100%, 31%, 1) 100%);
+  background: -moz-linear-gradient(360deg, hsla(5, 100%, 38%, 1) 0%, hsla(348, 100%, 31%, 1) 100%);
+  background: -webkit-linear-gradient(360deg, hsla(5, 100%, 38%, 1) 0%, hsla(348, 100%, 31%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C41000", endColorstr="#9F0020", GradientType=1 );
+  color : #F5F5F5;
 }

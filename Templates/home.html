@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %} 
+{% load humanize %}
 
 {% block cssFiles %}
 {% comment %}
@@ -91,8 +92,7 @@ the body part goes here
 <section class="">
   <div class="container-md container-fluid mt-5 pt-3">
     <div class="d-flex justify-content-between align-items-center mx-3">
-      <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#0047AB'>پیشنهاد</span> شگفت انگیز</storng></h2>
-      
+      <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#0047AB'>پیشنهاد</span> شگفت انگیز</strong></h2>  
     </div>
     <hr />
     <div class="slider-wraper slider-wraper-custom p-2 my-4 bg-gradient">
@@ -101,7 +101,7 @@ the body part goes here
           <div class="swiper-wrapper p-2">
             {% for dis in discounts %}
             <div class="card swiper-slide d-flex">
-              <a class="card-link text-decoration-none text-dark" href="#">
+              <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' dis.slug %}">
                 <div class="card-header">
                   <small class="">فروش ویژه</small>
                 </div>
@@ -114,8 +114,8 @@ the body part goes here
                   <h5 class="card-title">{{dis.name}}</h5>
                   <hr />
                   <div class="card-text">
-                    <small class="actual-price">{{dis.price}} تومان</small>
-                    <p class="discounted-price mt-1">{{dis.discounted_price}} تومان</p>
+                    <small class="actual-price">{{dis.price|intcomma}} تومان</small>
+                    <p class="discounted-price mt-1"><strong>{{dis.discounted_price|intcomma}} تومان</strong></p>
                   </div>
                 </div>
               </a>
@@ -152,13 +152,13 @@ the body part goes here
   </div>
 </section>
 
-{% for cat in category%}
 <!-- Category Products -->
+{% for cat in category%}
 <section>
   <div class="container-md container-fluid mt-5 pt-3">
     <div class="d-flex justify-content-between align-items-center mx-3">
       <h2 class="m-2">{{cat.name_fa}}</h2>
-      <a class="text-dark text-decoration-none" href="{% url 'main:categories' cat.slug %}">مشاهده همه ></a>
+      <a class="text-dark text-decoration-none" href="{% url 'main:categories' cat.slug %}"><strong>مشاهده همه >></strong></a>
     </div>
     <hr />
     <div class="slider-wraper slider-wraper-custom2 p-2 my-4">
@@ -181,7 +181,7 @@ the body part goes here
                        <h5 class="card-title">{{part.name}} </h5>
                         <hr />
                         <div class="card-text">
-                           <p class="product-price mt-1">{{part.price}} تومان</p>
+                           <p class="product-price mt-1"><strong>{{part.price|intcomma}} تومان</strong></p>
                         </div>
                       </div>
                     </div>

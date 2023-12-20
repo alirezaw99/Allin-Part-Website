@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %} 
-
+{% load humanize %}
 {% block cssFiles %}
 
 {% comment %}
@@ -39,7 +39,7 @@
         <strong>فیلتر</strong><i class="fa-solid fa-filter px-2"></i>
       </button>
       <button
-        class="btn btn-secondary"
+        class="btn btn-secondary d-none"
         data-bs-toggle="collapse"
         href="#ordercollapse"
         role="button"
@@ -238,7 +238,7 @@
                     <h5 class="card-title">{{part.name}} </h5>
                     <hr />
                     <div class="card-text">
-                      <p class="product-price mt-1">{{part.price}} تومان</p>
+                      <p class="product-price mt-1"><strong>{{part.price|intcomma}} تومان</strong></p>
                     </div>
                   </div>
                 </div>

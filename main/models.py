@@ -72,3 +72,6 @@ class Part(models.Model):
 class PartImage(models.Model):
     part = models.ForeignKey(Part, default=None, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=get_images_upload_path, default='images/default.png')
+    
+    def __str__(self):
+        return self.part.name  
