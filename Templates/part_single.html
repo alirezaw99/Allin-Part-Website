@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% load static %} {% load humanize %} {% block
-cssFiles %} {% comment %} linked css files related to this page {% endcomment %}
+{% extends 'base.html' %}
+{% load static %} 
+{% load humanize %} 
+{% block cssFiles %} {% comment %} linked css files related to this page {% endcomment %}
 
 <!--  CSS Files -->
 <link rel="stylesheet" href="{% static './css/main.css' %}" />
@@ -64,7 +66,7 @@ cssFiles %} {% comment %} linked css files related to this page {% endcomment %}
           <span class="text-danger"
             ><strong>مدل های به کار رفته : </strong>
           </span>
-          TWS-80410ST , TFI6219WT
+          {{part.used_models}}
         </p>
         <p class="px-2"><strong>کد فنی : </strong>{{part.part_number}}</p>
 

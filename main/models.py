@@ -54,7 +54,7 @@ class Part(models.Model):
     part_number = models.CharField(max_length=15, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sub_category = models.ForeignKey(Sub_Category, on_delete=models.CASCADE)
-    used_models = models.ManyToManyField(Model)
+    used_models = models.CharField(max_length=255, null=True)
     price = models.PositiveIntegerField()
     image_tumbnail = models.ImageField(upload_to=get_tumbnail_upload_path, default='images/default.png', blank=True)
     description = models.TextField(null=True, blank=True)
