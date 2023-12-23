@@ -224,6 +224,30 @@
         <div
           class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1 g-md-3 g-lg-5">
           {% for part in parts %}
+          {% if part.is_onsale == 1 %}
+          <div class="col">
+            <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' part.slug %}">
+            <div class=" card text-center h-100">
+                
+                  <img
+                    src="{{part.image_tumbnail.url}}"
+                    class="card-img-top img-fluid p-1"
+                    alt="failed to load image"/>
+                
+                <div class="card-body swiper-slide h-25 d-flex align-items-end justify-content-center">
+                  <div class='w-100'>
+                    <h5 class="card-title">{{part.name}} </h5>
+                    <hr />
+                    <div class="card-text">
+                      <p class="product-price mb-1 text-decoration-line-through text-danger">{{part.price|intcomma}} تومان</p>
+                      <p class="product-price mb-2"><strong>{{part.discounted_price|intcomma}} تومان</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% elif part.popular == 1 %}
           <div class="col">
             <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' part.slug %}">
             <div class=" card text-center h-100">
@@ -245,6 +269,29 @@
               </div>
             </a>
           </div>
+          {% else %}
+          <div class="col">
+            <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' part.slug %}">
+            <div class=" card text-center h-100">
+                
+                  <img
+                    src="{{part.image_tumbnail.url}}"
+                    class="card-img-top img-fluid p-1"
+                    alt="failed to load image"/>
+                
+                <div class="card-body swiper-slide h-25 d-flex align-items-end justify-content-center">
+                  <div class='w-100'>
+                    <h5 class="card-title">{{part.name}} </h5>
+                    <hr />
+                    <div class="card-text">
+                      <p class="product-price mt-1"><strong>استعلام بگیرید</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endif %}
           {% endfor %}
         </div>
       </div>
