@@ -37,3 +37,7 @@ class PartAdmin(admin.ModelAdmin):
 @admin.register(PartImage)
 class PartImageAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    pass

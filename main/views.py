@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.db.models import Q
 from .models import *
-
+from .forms import ContactForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -16,6 +17,14 @@ def home_view(request):
     return render(request, 'home.html', context)
 
 def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'پیام شما با موفقیت ثبت شد')
+        else:
+            messages.error(request, 'پیام شما ثبت نشد! لطفا مجددا تلاش کنید.')
+            
     return render(request, 'contact_us.html')
 
 def about_view(request):

@@ -74,4 +74,15 @@ class PartImage(models.Model):
     image = models.ImageField(upload_to=get_images_upload_path, default='images/default.png')
     
     def __str__(self):
-        return self.part.name  
+        return self.part.name 
+    
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email  = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    edited_date = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.name

@@ -45,6 +45,48 @@
       </div>
     </section>
 
+    <!-- Contact Form -->
+    <section>
+      <div class="container">
+        <hr class="mt-5 pt-5"> 
+        <p class=""><strong> درصورت تمایل جهت بهبود خدمات لطفا انتقادات ، پیشنهادات و یا درخواست خود را از طریق فرم زیر ارسال بفرمایید.</strong></p>  
+        <form class="row g-5 mt-4" action="{% url 'main:contact' %}" method="post">
+          {% csrf_token %}
+          <div class="col-md-6 mt-3">
+            <label for="inputname" class="form-label">نام و نام خوانوادگی</label>
+            <input name="name" type="text" class="form-control" id=:"inputname" aria-label="First name">
+         </div>
+         <div class="col-md-6 mt-3">
+            <label for="inputsubject" class="form-label">موضوع</label>
+            <input name="subject" type="text" class="form-control" id="inputsubject" aria-label="Last name">
+          </div>
+          <div class="col-12 mt-3">
+            <label for="inputEmail" class="form-label">آدرس ایمیل</label>
+            <input name="email" type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
+          </div>
+          <div class="col-12 mt-3">
+            <label for="textinput" class="form-label">انتقاد و پیشنهاد</label>
+            <textarea name="message" class="form-control" id="textinput" rows="5"></textarea>
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary" type="submit">ارسال فرم</button>
+          </div>
+       </form>
+        {% if messages %}
+          {% for message in messages %}
+            {% if 'success' in message.tags %}
+            <div class="alert alert-dismissible alert-success mt-3">
+              <strong>{{message}}</strong>
+            </div>
+            {% else %}
+            <div class="alert alert-dismissible alert-danger mt-3">
+              <strong>{{message}}</strong>
+           </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </section>
+
     {% endblock %}
 
     {% block jsFiles %}
