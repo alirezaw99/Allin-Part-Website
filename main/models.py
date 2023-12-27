@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from .misc import get_tumbnail_upload_path , get_images_upload_path
 
 # Create your models here.
@@ -68,6 +69,9 @@ class Part(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("main:part_detail", kwargs={"slug": self.slug})
     
 class PartImage(models.Model):
     part = models.ForeignKey(Part, default=None, on_delete=models.CASCADE)
