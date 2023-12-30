@@ -75,42 +75,96 @@
         <p class="mb-5">{{part.description}}</p>
       </div>
 
-      {% if part.is_onsale == 1 %}
+        {% if part.is_onsale == 1 %}
       <div
-        class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between"
-      >
-        <span class="h4 me-2 pe-2 text-nowrap">قیمت : </span>
-        <div class="text-center">
-          <span
-            class="h6 px-1 text-decoration-line-through"
-            style="color: #e5e4e2"
-            >{{part.price|intcomma}} تومان</span
-          >
-          <span class="h4 px-1">{{part.discounted_price|intcomma}} تومان</span>
+          class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between">
+          <span class="h4 me-2 pe-2 text-nowrap">قیمت : </span>
+          <div class="text-center">
+            <span
+              class="h6 px-1 text-decoration-line-through"
+              style="color: #e5e4e2"
+              >{{part.price|intcomma}} تومان</span
+            >
+            <span class="h4 px-1">{{part.discounted_price|intcomma}} تومان</span>
+          </div>
         </div>
-      </div>
-      {% elif part.popular == 1 %}
-      <div
-        class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between"
-      >
-        <span class="h4 me-2 pe-2 text-nowrap">قیمت : </span>
-        <span class="h4 px-1">{{part.price|intcomma}} تومان</span>
-      </div>
-      {% else %}
-      <div
-        class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between"
-      >
-        <span class="h4 me-2 pe-2 text-nowrap">قیمت : </span>
-        <span class="h4 px-1">استعلام بگیرید</span>
-      </div>
-      {% endif %}
-      <p class="d-inline-block my-5">
+        {% elif part.popular == 1 %}
+        <div
+          class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between"
+        >
+          <span class="h4 me-2 pe-2 text-nowrap">قیمت : </span>
+          <span class="h4 px-1">{{part.price|intcomma}} تومان</span>
+        </div>
+        {% else %}
+        <div
+          class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between"
+        >
+          <span class="h4 me-2 pe-2 text-nowrap">قیمت : </span>
+          <span class="h4 px-1">استعلام بگیرید</span>
+        </div>
+        {% endif %}
+        <p class="d-inline-block my-5">
         جهت ثبت سفارش ، استعلام قیمت و یا دریافت مشاوره جهت خرید
         <a href="{% url 'main:contact' %}"> نحوه ثبت سفارش</a> را مشاهده کنید.
-      </p>
+        </p>
     </div>
   </div>
 </div>
+
+<!-- Comments-->
+<section>
+  <div class="container">
+    <hr>
+    <p class="h5">{{comments|length}} دیدگاه برای {{part.name}} ثبت شده است. </P>
+    {% for comment in comments %}
+    <div class="comment">
+      <div>
+        <img class="user-icon class=" src="{% static './icons/user-icon.svg' %}" width="50" height="50" />
+        <strong class="mx-2">{{comment.name}}</strong>
+        <i class="fa-regular fa-clock fa-xs"></i>
+        <small class="">{{comment.created_date|naturalday}}</small>
+        <p class="m-2">{{comment.comment}}</p>
+        <hr>
+      </div>
+    </div>
+    {% empty %}
+    <p class="mt-4">اولین نفری باشید که برای {{part.name}} دیدگاهی ثبت می کند.</P>
+    {% endfor %}
+  </div>
+  <div class="container">
+    <form class="row g-5 mt-4" action="{% url 'main:part_detail' slug=part.slug %}" method="post">
+      {% csrf_token %}
+      <div class="col-md-6 mt-3">
+        <label for="inputname" class="form-label">نام و نام خانوادگی</label>
+        <input name="name" type="text" class="form-control" id=:"inputname" aria-label="First name">
+      </div>
+      <div class="col-md-6 mt-3">
+        <label for="inputEmail" class="form-label">آدرس ایمیل</label>
+        <input name="email" type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
+      </div>
+      <div class="col-12 mt-3">
+        <label for="textinput" class="form-label">دیدگاه خود را بنویسید : </label>
+        <textarea name="comment" class="form-control" id="textinput" rows="5"></textarea>
+      </div>
+      <div class="col-12 mt-3">
+        <button class="btn btn-primary" type="submit">ارسال نظر</button>
+      </div>
+    </form>
+    {% if messages %}
+      {% for message in messages %}
+        {% if 'success' in message.tags %}
+        <div class="alert alert-dismissible alert-success mt-3">
+          <strong>{{message}}</strong>
+        </div>
+        {% else %}
+        <div class="alert alert-dismissible alert-danger mt-3">
+          <strong>{{message}}</strong>
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
 
 {% endblock %} {% block jsFiles %} {% comment %} javascript files related to
 this page gose here {% endcomment %}

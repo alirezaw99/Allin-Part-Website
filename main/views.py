@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.db.models import Q
 from .models import *
-from .forms import ContactForm
+from .forms import ContactForm, CommentForm
 from django.contrib import messages
 
 # Create your views here.
@@ -62,6 +62,19 @@ def parts_detail_view(request, slug):
     part = get_object_or_404(Part, slug=slug)
     images = PartImage.objects.filter(part=part)
     
-    context = {'part':part, 'images':images}
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.part = part
+            comment.save()
+            form.save()
+            messages.success(request, 'پیام شما با موفقیت ثبت شد و در انتظار تایید می باشد.')
+        else:
+            messages.error(request, 'پیام شما ثبت نشد! لطفا مجددا تلاش کنید.')
+            
+    comments = Comment.objects.filter(part=part, approved=True)
+    
+    context = {'part':part, 'images':images, 'comments':comments}
     
     return render(request, 'part_single.html', context)

@@ -53,7 +53,7 @@
         <form class="row g-5 mt-4" action="{% url 'main:contact' %}" method="post">
           {% csrf_token %}
           <div class="col-md-6 mt-3">
-            <label for="inputname" class="form-label">نام و نام خوانوادگی</label>
+            <label for="inputname" class="form-label">نام و نام خانوادگی</label>
             <input name="name" type="text" class="form-control" id=:"inputname" aria-label="First name">
          </div>
          <div class="col-md-6 mt-3">
@@ -67,6 +67,7 @@
           <div class="col-12 mt-3">
             <label for="textinput" class="form-label">انتقاد و پیشنهاد</label>
             <textarea name="message" class="form-control" id="textinput" rows="5"></textarea>
+          </div>
           <div class="col-12 mt-3">
             <button class="btn btn-primary" type="submit">ارسال فرم</button>
           </div>

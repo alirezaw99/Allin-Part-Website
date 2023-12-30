@@ -38,6 +38,10 @@ class PartAdmin(admin.ModelAdmin):
 class PartImageAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
+
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     pass
