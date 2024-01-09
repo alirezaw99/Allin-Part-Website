@@ -7,3 +7,4 @@ robots==0.1.5
 sqlparse==0.4.4
 tzdata==2023.3
 python-decouple
+psycopg2
