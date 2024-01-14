@@ -7,13 +7,13 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
 #Site ID
-SITE_ID = 2
+SITE_ID = config('SITE_ID', cast=int, default=1)
 
 
 # Database
@@ -30,9 +30,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'static/'
+# STATIC_ROOT = 'static/'
+
 STATICFILES_DIRS = [
-    BASE_DIR / "Statics",
+    BASE_DIR / "static",
 ]
 
 MEDIA_URL = 'media/'
