@@ -1,5 +1,20 @@
 /* Typing Animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
+.animation::before
+.container{
+  display: inline-block;
+}
+.typed-out{
+  overflow: hidden;
+  font-size: 3vw;
+  animation: 
+    typing 4s forwards infinite;
+    width: 0;
+}
 
 /* Categories Section */
 .category-cards {

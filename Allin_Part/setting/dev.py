@@ -1,5 +1,7 @@
 from Allin_Part.settings import *
 from decouple import config
+import os
+import dj_database_url
 # Initialise environment variables
 
 
@@ -25,6 +27,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+#     }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
