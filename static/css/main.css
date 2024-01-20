@@ -3,6 +3,14 @@
   font-family: vazir;
   src: local("Vazir"), url("../Fonts/Vazir.ttf") format("truetype");
 }
+@font-face {
+  font-family: persian;
+  src: local("persian"), url("../Fonts/persian.ttf") format("truetype");
+}
+@font-face {
+  font-family: kaj;
+  src: local("kaj"), url("../Fonts/kaj.ttf") format("truetype");
+}
 body {
   font-family: vazir;
 }

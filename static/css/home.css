@@ -9,11 +9,19 @@
   display: inline-block;
 }
 .typed-out{
+  font-family: persian;
+
   overflow: hidden;
-  font-size: 3vw;
+  font-size: 7vw;
   animation: 
     typing 4s forwards infinite;
     width: 0;
+}
+
+@media (min-width: 1200px) {
+  .typed-out {
+    font-size: 5vw;
+  }
 }
 
 /* Categories Section */
