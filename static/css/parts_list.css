@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
 }
 
+.card{
+  border-color: #a80000 !important;
+}
+
 .header-text {
   text-wrap: nowrap;
 }

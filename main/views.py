@@ -8,7 +8,7 @@ from django.contrib import messages
 # Create your views here.
 
 def home_view(request):
-    category = Category.objects.all()
+    category = Category.objects.all().order_by('created_date')
     parts = Part.objects.filter(popular=1)
     discounts = Part.objects.filter(is_onsale=1)
     
