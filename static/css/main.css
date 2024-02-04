@@ -16,6 +16,9 @@ body {
 }
 
 /* NavBar */
+nav{
+  background-color: #820000;
+}
 .custom-brand,
 .custom-brand:hover {
   color: white;
@@ -81,18 +84,18 @@ body {
 }
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: #700000;
+  background-color: #990000;
 }
 .dropdown-menu li:hover,
 .dropdown-menu li:focus {
-  background-color: #700000;
+  background-color: #990000;
   border-radius: 1rem;
 }
 .dropdown-menu-custom {
-  background-color: #a80000;
+  background-color: #700000;
 }
 .dropdown-menu-custom2 {
-  background-color: #a42e2e;
+  background-color: #700000;
 }
 
 /* Search Area */

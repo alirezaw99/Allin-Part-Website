@@ -14,36 +14,131 @@
 {% comment %}
 the body part goes here
 {% endcomment %}
+<body class="">
+
+  <!-- Navigation Bar -->
+<div class="sticky-top pb-4">
+  <div class="container pt-4">
+    <nav
+      class="navbar navbar-expand-lg navbar-nav navbar-custom bg-gradient"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler navbar-toggler-custom"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span> <i class="fa-solid fa-bars custom-brand"></i></span>
+        </button>
+        <a class="navbar-brand custom-brand px-2" href="{% url 'main:home' %}">
+          <img class='logo ms-2' src="{% static '/images/allin-logo.png' %}" alt="cat't load image" height="50" width="50"/>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown nav-item-custom">
+              <a
+                href=""
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                >دسته بندی محصولات</a
+              >
+              <ul class="dropdown-menu dropdown-menu-custom p-1">
+                {% for cat in category %}
+                <li class="p-1">
+                  <a href="{% url 'main:categories' cat.slug %}" class="dropdown-item"
+                  >{{cat}} &raquo;</a
+                  >
+                  <ul class="submenu dropdown-menu dropdown-menu-custom2">
+                    
+                    {% for sub_cat in sub_category %}
+                    {% if sub_cat.category == cat %}
+                    <li><a href="{% url 'main:categories' sub_cat.slug %}" class="dropdown-item">{{sub_cat.name_fa}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                  </ul>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="nav-item nav-item-custom">
+              <a href="{% url 'main:contact' %}" class="nav-link"
+                >تماس با ما</a
+              >
+            </li>
+            <li class="nav-item nav-item-custom">
+              <a href="{% url 'main:about' %}" class="nav-link"
+                >درباره ما</a
+              >
+            </li>
+          </ul>
+        </div>
+        <p class="d-inline-flex gap-1 m-0">
+          <button
+            class="btn search-btn-custom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSearch"
+            aria-expanded="false"
+            aria-controls="collapseSearch"
+          >
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          </button>
+        </p>
+        <div class="collapse search-area p-0" id="collapseSearch">
+          <form class="d-flex" role="search" action="{% url 'main:search' %}">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="search"
+              aria-label="Search"
+              name='search'
+            />
+            <button class="btn btn-outline-success custom-btn" type="submit">
+              جستجو
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>  
 
 <!-- Slider Section -->
-<section class="slider my-4">
+<section class="slider mb-4">
   <div class="container container-fluid">
     <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
       
       <div class="carousel-inner rounded-5">
         <div class="carousel-item bg-body active">
           <img src="{% static "./images/slider/banner1-crimson.jpg" %}" class="d-block
-          img-fluid" alt="" />
+          img-fluid" alt="can't load image" />
         </div>
         <div class="carousel-item bg-body">
           <img src="{% static "./images/slider/banner2.jpg" %}" class="d-block
-          img-fluid" alt="" />
+          img-fluid" alt="can't load image" />
         </div>
         <div class="carousel-item bg-body">
           <img src="{% static "./images/slider/banner3.jpg" %}" class="d-block
-          img-fluid" alt="" />
+          img-fluid" alt="can't load image" />
         </div>
         <div class="carousel-item bg-body">
           <img src="{% static "./images/slider/banner4.jpg" %}" class="d-block
-          img-fluid" alt="" />
+          img-fluid" alt="can't load image" />
         </div>
         <div class="carousel-item bg-body">
           <img src="{% static "./images/slider/banner5.jpg" %}" class="d-block
-          img-fluid" alt="" />
+          img-fluid" alt="can't load image" />
         </div>
         <div class="carousel-item bg-body">
           <img src="{% static "./images/slider/banner6.jpg" %}" class="d-block
-          img-fluid" alt="" />
+          img-fluid" alt="can't load image" />
         </div>
       </div>
       <div class="carousel-indicators justify-content-center">
@@ -95,12 +190,13 @@ the body part goes here
 <div class="container">
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-center m-4 text-nowrap">
-      <p class="typed-out">تنها نمایندگی رسمی فروش قطعات شرکت پاکشوما</p>
+      <h1 class="typed-out">تنها نمایندگی رسمی فروش قطعات شرکت پاکشوما</h1>
     </div>
   </div>
 </div>
+
 <!-- Ctegories Section -->
-<section id="categories" class="my-4">
+<section id="categories" class="">
   <div class="container-md container-fluid">
     <div class="category-cards card-group row row-cols-7">
       {% for cat in category %}
@@ -112,7 +208,7 @@ the body part goes here
             <img
               src="{{cat.icon.url}}"
               class="card-img-top img-fluid "
-              alt="..."/>
+              alt="can't load image"/>
           </div>
           <div class="card-body pb-0">
             <h5 class="card-title text-center">
@@ -127,9 +223,12 @@ the body part goes here
   </div>
 </section>
 
+<div class="background-white">
+  <div class="curve">
+  </div>
 <!-- Discounted Products -->
-<section class="">
-  <div class="container-md container-fluid mt-5 pt-3">
+<section class="discounted">
+  <div class="container-md container-fluid pt-5">
     <div class="d-flex justify-content-between align-items-center mx-3">
       <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#AA98A9'>پیشنهاد</span> شگفت انگیز</strong></h2>  
     </div>
@@ -147,7 +246,7 @@ the body part goes here
                 <img
                   src="{{dis.image_tumbnail.url}}"
                   class="card-img-top img-fluid"
-                  alt="..."
+                  alt="can't load image"
                 />
                 <div class="card-body swiper-slide">
                   <h5 class="card-title">{{dis.name}}</h5>
@@ -193,7 +292,7 @@ the body part goes here
 
 <!-- Category Products -->
 {% for cat in category%}
-<section>
+<section class="category">
   <div class="container-md container-fluid mt-5 pt-3">
     <div class="d-flex justify-content-between align-items-center mx-3">
       <h1 class="m-2 h2">{{cat.name_fa}}</h1>
@@ -261,7 +360,7 @@ the body part goes here
   </div>
 </section>
 {% endfor %}
-
+<div>
 {% endblock %}
 
 {% block jsFiles %}

@@ -9,7 +9,7 @@ body {
 }
 
 .card{
-  border-color: #a80000 !important;
+  border: 2px solid #a80000 !important
 }
 
 .header-text {
