@@ -1,22 +1,9 @@
 body {
-  /* background: hsla(0, 0%, 79%, 1);
-
-background: linear-gradient(180deg, hsla(0, 0%, 79%, 1) 0%, hsla(0, 0%, 33%, 1) 100%, hsla(0, 0%, 49%, 1) 100%);
-
-background: -moz-linear-gradient(180deg, hsla(0, 0%, 79%, 1) 0%, hsla(0, 0%, 33%, 1) 100%, hsla(0, 0%, 49%, 1) 100%);
-
-background: -webkit-linear-gradient(180deg, hsla(0, 0%, 79%, 1) 0%, hsla(0, 0%, 33%, 1) 100%, hsla(0, 0%, 49%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C9C9C9", endColorstr="#535353", GradientType=1 ); */
-background: hsla(0, 38%, 33%, 1);
-
-background: linear-gradient(180deg, hsla(0, 38%, 33%, 1) 0%, hsla(0, 0%, 81%, 1) 53%);
-
-background: -moz-linear-gradient(180deg, hsla(0, 38%, 33%, 1) 0%, hsla(0, 0%, 81%, 1) 53%);
-
-background: -webkit-linear-gradient(180deg, hsla(0, 38%, 33%, 1) 0%, hsla(0, 0%, 81%, 1) 53%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#753434", endColorstr="#cecece", GradientType=1 );
+  background: hsla(0, 0%, 67%, 1);
+  background: linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: -moz-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: -webkit-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ABABAB", endColorstr="#FFFFFF", GradientType=1 );
 }
 .background-white{
   background-color: white !important;
@@ -35,12 +22,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#753434", en
 }
 .typed-out{
   font-family: persian;
-
   overflow: hidden;
   font-size: 7vw;
-  animation: 
-    typing 4s forwards infinite;
+  /* animation: 
+    typing 2s forwards infinite;
     width: 0;
+    animation-delay: 2s; */
 }
 
 @media (min-width: 1200px) {
@@ -49,18 +36,37 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#753434", en
   }
 }
 
+/* Allin Part Writing */
+@keyframes drop{
+  0%{opacity: 0}
+  70%{transform: translateY(425px)}
+  100%{transform: translateY(380px)}
+}
+.allin-writing {
+  width: 50vw;
+  height: 10vw;
+  position:relative;
+  top:-400px !important;
+  animation: drop 3s ease-in-out forwards;
+  animation-iteration-count:infinite;
+}
+
+@media (min-width: 1200px){
+  .allin-writing {
+    width: 30vw;
+    height: 6vw;
+  }
+}
 /* Categories Section */
 .category-cards {
   white-space: nowrap;
   overflow-y: hidden !important;
-
   flex-wrap: nowrap;
   display: flex;
   align-items: flex-start;
 }
 .card-image {
   background-color: #F9F9F9;
-  /* border : 1px solid black; */
   border-radius: 100px;
   width: 125px;
   height: 125px;
@@ -92,19 +98,20 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#753434", en
 }
 
 .curve{
-  background: hsla(0, 38%, 33%, 1);
-
-  background: linear-gradient(180deg, hsla(0, 38%, 33%, 1) 0%, hsla(0, 0%, 81%, 1) 53%);
+  background: hsla(0, 0%, 67%, 1);
+  background: linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: -moz-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: -webkit-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ABABAB", endColorstr="#FFFFFF", GradientType=1 );
   
-  background: -moz-linear-gradient(180deg, hsla(0, 38%, 33%, 1) 0%, hsla(0, 0%, 81%, 1) 53%);
-  
-  background: -webkit-linear-gradient(180deg, hsla(0, 38%, 33%, 1) 0%, hsla(0, 0%, 81%, 1) 53%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#753434", endColorstr="#cecece", GradientType=1 );
-
+  height:40px;
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+}
+@media (min-width: 1200px){
+  .curve{
     height:85px;
-    border-bottom-left-radius:50%;
-    border-bottom-right-radius:50%;
+  }
 }
 
 /* Discount Section */
@@ -128,7 +135,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#753434", en
 }
 .card-image {
   background-color: inherit;
-  border : 1px solid black;
+  border : 2px solid black;
 }
 
 .card-header {
