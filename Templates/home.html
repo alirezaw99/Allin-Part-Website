@@ -209,7 +209,7 @@ the body part goes here
 <!-- Ctegories Section -->
 <section id="categories" class="">
   <div class="container-md container-fluid">
-    <div class="category-cards card-group row row-cols-7">
+    <div class="category-cards card-group row row-cols-7 gx-5">
       {% for cat in category %}
       <div
       class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
@@ -237,6 +237,7 @@ the body part goes here
 <div class="background-white">
   <div class="curve">
   </div>
+
 <!-- Discounted Products -->
 <section class="discounted">
   <div class="container-md container-fluid pt-5">
@@ -249,26 +250,32 @@ the body part goes here
         <div #swiperRef="#" class="slide-content mySwiper m-1">
           <div class="swiper-wrapper p-2">
             {% for dis in discounts %}
-            <div class="card swiper-slide d-flex">
-              <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' dis.slug %}">
-                <div class="card-header">
-                  <small class="">فروش ویژه</small>
-                </div>
-                <img
-                  src="{{dis.image_tumbnail.url}}"
-                  class="card-img-top img-fluid"
-                  alt="can't load image"
-                />
-                <div class="card-body swiper-slide">
-                  <h5 class="card-title">{{dis.name}}</h5>
-                  <hr />
-                  <div class="card-text">
-                    <small class="actual-price">{{dis.price|intcomma}} تومان</small>
-                    <p class="discounted-price mt-1"><strong>{{dis.discounted_price|intcomma}} تومان</strong></p>
+            
+            <div class=" swiper-slide ">
+              <a class="card-link text-decoration-none text-dark h-100" href="{% url 'main:part_detail' dis.slug %}">
+                <div class='card text-center p-1 h-100'>
+                  <div class="card-header">
+                    <small class="">فروش ویژه</small>
+                  </div>
+                  <img
+                    src="{{part.image_tumbnail.url}}"
+                    class="card-img-top img-fluid p-1"
+                    alt="failed to load image"/>
+                
+                  <div class="card-body swiper-slide h-25 d-flex align-items-end justify-content-center">
+                    <div class='w-100'>
+                     <h5 class="card-title">{{dis.name}} </h5>
+                      <hr />
+                      <div class="card-text">
+                         <small class="product-price mt-1 text-danger text-decoration-line-through"><strong>{{dis.price|intcomma}} تومان</strong></small>
+                         <p class="product-price mt-1"><strong>{{dis.discounted_price|intcomma}} تومان</strong></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
+
             {% endfor %}
           </div>
           <div class="swiper-button-next swiper-nav-btn d-none d-md-block">
