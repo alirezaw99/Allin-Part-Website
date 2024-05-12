@@ -20,7 +20,7 @@ the body part goes here
 <div class="sticky-top pb-4">
   <div class="container pt-4">
     <nav
-      class="navbar navbar-expand-lg navbar-nav navbar-custom bg-gradient"
+      class="navbar navbar-expand-lg navbar-nav navbar-nav-scroll navbar-custom bg-gradient"
     >
       <div class="container-fluid">
         <button
@@ -209,27 +209,30 @@ the body part goes here
 <!-- Ctegories Section -->
 <section id="categories" class="">
   <div class="container-md container-fluid">
-    <div class="category-cards card-group row row-cols-7 gx-5">
-      {% for cat in category %}
-      <div
-      class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
-      <a href="{% url 'main:categories' cat.slug %}" class="card-link">
-        <div class="card card-custom align-items-center">
-          <div class="card-image p-4" >
-            <img
-              src="{{cat.icon.url}}"
-              class="card-img-top img-fluid "
-              alt="can't load image"/>
-          </div>
-          <div class="card-body pb-0">
-            <h5 class="card-title text-center">
-              <a class="cat-link" href="{% url 'main:categories' cat.slug %}">{{cat.name_fa}}</a>
-            </h5>
-          </div>
+    <div class="category-cards card-group row row-cols-7 gx-5 w-100">
+      
+      
+        {% for cat in category %}
+        <div class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
+          <a href="{% url 'main:categories' cat.slug %}" class="card-link">
+            <div class="card card-custom align-items-center">
+              <div class="card-image p-4" >
+                <img
+                  src="{{cat.icon.url}}"
+                  class="card-img-top img-fluid "
+                  alt="can't load image"/>
+              </div>
+              <div class="card-body pb-0">
+                <h5 class="card-title text-center">
+                  <a class="cat-link" href="{% url 'main:categories' cat.slug %}">{{cat.name_fa}}</a>
+                </h5>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-      {% endfor %}
+        {% endfor %}
+        
+      
     </div>
   </div>
 </section>

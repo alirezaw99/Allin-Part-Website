@@ -62,9 +62,9 @@ body {
   white-space: nowrap;
   overflow-y: hidden !important;
   flex-wrap: nowrap;
-  display: flex;
   align-items: flex-start;
 }
+
 .card-image {
   background-color: #F9F9F9;
   border-radius: 100px;
@@ -76,6 +76,7 @@ body {
   color: #990000;
   font-size: 1.4rem;
 }
+
 .category-card:hover .card-image {
   border: 3px solid #990000
 }
