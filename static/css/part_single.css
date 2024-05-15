@@ -72,3 +72,7 @@
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C41000", endColorstr="#9F0020", GradientType=1 );
   color : #F5F5F5;
 }
+
+.order-parag{
+  font-size: 1.3rem;
+}
