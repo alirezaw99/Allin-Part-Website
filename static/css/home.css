@@ -48,7 +48,7 @@ body {
   position:relative;
   top:-400px !important;
   animation: drop 3s ease-in-out forwards;
-  animation-iteration-count:infinite;
+  animation-iteration-count:initial;
 }
 
 @media (min-width: 1200px){
