@@ -1,26 +1,40 @@
 body {
   background: hsla(0, 0%, 67%, 1);
-  background: linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-  background: -moz-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-  background: -webkit-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);  
+  background: linear-gradient(
+    0deg,
+    hsla(0, 0%, 67%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    0deg,
+    hsla(0, 0%, 67%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(0, 0%, 67%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ABABAB", endColorstr="#FFFFFF", GradientType=1 );
 }
-.background-white{
+.background-white {
   background-color: white !important;
 }
 
-
 /* Typing Animation */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
-.animation::before
-.container{
+.animation::before .container {
   display: inline-block;
 }
-.typed-out{
+.typed-out {
   font-family: persian;
   overflow: hidden;
   font-size: 7vw;
@@ -37,21 +51,27 @@ body {
 }
 
 /* Allin Part Writing */
-@keyframes drop{
-  0%{opacity: 0}
-  70%{transform: translateY(425px)}
-  100%{transform: translateY(380px)}
+@keyframes drop {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(425px);
+  }
+  100% {
+    transform: translateY(380px);
+  }
 }
 .allin-writing {
   width: 50vw;
   height: 10vw;
-  position:relative;
-  top:-400px !important;
+  position: relative;
+  top: -400px !important;
   animation: drop 3s ease-in-out forwards;
-  animation-iteration-count:initial;
+  animation-iteration-count: initial;
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
   .allin-writing {
     width: 30vw;
     height: 6vw;
@@ -66,7 +86,7 @@ body {
 }
 
 .card-image {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border-radius: 100px;
   width: 125px;
   height: 125px;
@@ -78,7 +98,7 @@ body {
 }
 
 .category-card:hover .card-image {
-  border: 3px solid #990000
+  border: 3px solid #990000;
 }
 
 .category-cards img {
@@ -98,20 +118,32 @@ body {
   color: black;
 }
 
-.curve{
+.curve {
   background: hsla(0, 0%, 67%, 1);
-  background: linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-  background: -moz-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-  background: -webkit-linear-gradient(0deg, hsla(0, 0%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    hsla(0, 0%, 67%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    0deg,
+    hsla(0, 0%, 67%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(0, 0%, 67%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ABABAB", endColorstr="#FFFFFF", GradientType=1 );
-  
-  height:40px;
-  border-bottom-left-radius:50%;
-  border-bottom-right-radius:50%;
+
+  height: 40px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
-@media (min-width: 1200px){
-  .curve{
-    height:85px;
+@media (min-width: 1200px) {
+  .curve {
+    height: 85px;
   }
 }
 
@@ -136,7 +168,7 @@ body {
 }
 .card-image {
   background-color: inherit;
-  border : 2px solid black;
+  border: 2px solid black;
 }
 
 .card-header {
@@ -182,3 +214,13 @@ body {
 .swiper-container-custom2 {
   background-color: #f1f1f1;
 }
+/* 
+.product-card {
+  width: 200px !important;
+  height: 300px !important;
+} */
+
+/* .card-img-top{
+  width: 182px;
+  height: 182px;
+} */
