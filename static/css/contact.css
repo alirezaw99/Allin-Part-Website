@@ -1,10 +1,17 @@
 .messenger-icon{
-    height: 20px;
-    width: 20px;
+    height: 55px;
+    width: 55px;
 
 }
 
 .call{
     font-size: 1.5em;
 
+}
+
+.number{
+    font-size: 1.2em;
+    font-style: italic;
+    letter-spacing: 3px;
+    margin-top: 10px;
 }
