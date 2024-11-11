@@ -35,9 +35,9 @@ body {
   display: inline-block;
 }
 .typed-out {
-  font-family: persian;
+  font-family: far;
   overflow: hidden;
-  font-size: 7vw;
+  font-size: 5vw;
   /* animation: 
     typing 2s forwards infinite;
     width: 0;
@@ -46,7 +46,7 @@ body {
 
 @media (min-width: 1200px) {
   .typed-out {
-    font-size: 5vw;
+    font-size: 4vw;
   }
 }
 
