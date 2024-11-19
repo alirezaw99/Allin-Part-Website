@@ -35,7 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'robots',
     'django.contrib.humanize',
-    'main'
+    'jalali_date',
+    'main',
+    'blog'
+    
 ]
 
 
