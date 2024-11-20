@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'robots',
     'django.contrib.humanize',
     'jalali_date',
+    'django_summernote',
     'main',
     'blog'
     

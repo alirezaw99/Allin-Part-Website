@@ -22,33 +22,38 @@ body{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    direction: rtl; /* Right-to-left direction for Farsi */
+    text-align: right;
 }
 .post-image {
     order: 0; /* Default order for image */
-    width: 50%; /* Image on the left or right */
+    width: 50%; /* Image takes half width */
 }
 .post-content {
     order: 1; /* Default order for content */
-    width: 50%; /* Content on the left or right */
+    width: 50%; /* Content takes half width */
+    text-align: right; /* Ensure text aligns right */
 }
 
-/* Mobile View: Images Always on Top */
+/* Mobile View: Image Always on Top */
 @media (max-width: 768px) {
     .post-row {
         flex-direction: column; /* Stack rows vertically */
-        text-align: center;
+        text-align: right; /* Right-alignment for Farsi */
     }
     .post-image,
     .post-content {
         width: 100%; /* Full width for both image and content */
     }
     .post-image {
-        order: 0; /* Image always on top */
+        order: 0; /* Image on top */
     }
     .post-content {
-        order: 1; /* Content always below the image */
+        order: 1; /* Content below image */
+        text-align: right; /* Ensure content remains right-aligned */
     }
 }
+
 
 
 li{

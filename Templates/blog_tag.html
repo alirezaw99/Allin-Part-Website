@@ -132,7 +132,7 @@
                         <span><i class="fa fa-calendar-o"></i> {{ post.created_date|to_jalali:"%Y/%m/%d"  }}</span>
                         <span><i class="fas fa-pen"></i> {{ post.author.first_name }} {{ post.author.last_name }}</span>
                     </div>
-                    <p>{{ post.content|truncatewords:10 }}</p>
+                    <p>{{ post.content|truncatewords:20|safe }}</p>
                     <div class="text-left">
                         <a href="{% url 'blog:blog_single' post.id %}" class="site-btn">ادامه مطلب <i class="fa fa-angle-left"></i></a>
                     </div>

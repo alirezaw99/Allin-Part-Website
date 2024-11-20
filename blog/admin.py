@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import *
 
 # Register your models here.
@@ -8,8 +9,9 @@ class TagAdmin(admin.ModelAdmin):
     
     
 @admin.register(Blog)
-class BlogAdmin(admin.ModelAdmin):
+class BlogAdmin(SummernoteModelAdmin, admin.ModelAdmin):
     list_display = ['title', 'author', 'publish']
     list_filter = ['author', 'publish']
     search_fields = ['title', 'content']
+    summernote_fields = ('content',)
     
