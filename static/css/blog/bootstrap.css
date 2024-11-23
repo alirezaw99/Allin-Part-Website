@@ -189,6 +189,13 @@ td,
 th {
   padding: 0;
 }
+
+.nav-container:before,
+.nav-container:after{
+  display: none !important;
+  content: none !important;
+}
+
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
