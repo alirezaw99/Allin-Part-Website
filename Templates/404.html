@@ -1,0 +1,138 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block cssFiles %}
+{% comment %}
+  linked css files related to this page
+{% endcomment %}
+<link rel="stylesheet" href="{% static './css/main.css' %}" />
+<link rel="stylesheet" href="{% static './css/404.css' %}" />
+{% endblock %}
+
+{% block body %}
+{% comment %}
+the body part goes here
+{% endcomment %}
+<body class="">
+     <!-- Navigation Bar -->
+<div class="sticky-top pb-4">
+  <div class="container pt-4">
+    <nav
+      class="navbar navbar-expand-lg navbar-nav navbar-custom bg-gradient"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler navbar-toggler-custom"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span> <i class="fa-solid fa-bars custom-brand"></i></span>
+        </button>
+        <a class="navbar-brand custom-brand px-2" href="{% url 'main:home' %}">
+          <img class='logo ms-2' src="{% static '/images/allin-logo.png' %}" alt="cat't load image" height="50" width="50"/>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav navbar-nav-scroll">
+            <li class="nav-item dropdown nav-item-custom">
+              <a
+                href=""
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                >دسته بندی محصولات</a
+              >
+              <ul class="dropdown-menu dropdown-menu-custom p-1">
+                {% for cat in category %}
+                <li class="p-1">
+                  <a href="{% url 'main:categories' cat.slug %}" class="dropdown-item"
+                  >{{cat}} &raquo;</a
+                  >
+                  <ul class="submenu dropdown-menu dropdown-menu-custom2">
+                    
+                    {% for sub_cat in sub_category %}
+                    {% if sub_cat.category == cat %}
+                    <li><a href="{% url 'main:categories' sub_cat.slug %}" class="dropdown-item">{{sub_cat.name_fa}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                  </ul>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="nav-item nav-item-custom">
+              <a href="{% url 'blog:blog_home' %}" class="nav-link"
+                >وبلاگ</a
+              >
+            </li>
+            <li class="nav-item nav-item-custom">
+              <a href="{% url 'main:contact' %}" class="nav-link"
+                >تماس با ما</a
+              >
+            </li>
+            <li class="nav-item nav-item-custom">
+              <a href="{% url 'main:about' %}" class="nav-link"
+                >درباره ما</a
+              >
+            </li>
+          </ul>
+        </div>
+        <p class="d-inline-flex gap-1 m-0">
+          <button
+            class="btn search-btn-custom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSearch"
+            aria-expanded="false"
+            aria-controls="collapseSearch"
+          >
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          </button>
+        </p>
+        <div class="collapse search-area p-0" id="collapseSearch">
+          <form class="d-flex" role="search" action="{% url 'main:search' %}">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="search"
+              aria-label="Search"
+              name='search'
+            />
+            <button class="btn btn-outline-success custom-btn" type="submit">
+              جستجو
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div> 
+
+
+
+<div class="container d-flex flex-column align-items-center justify-content-center">
+    <div class="illustration">😕</div>
+    <div class="error-code">404</div>
+    <div class="error-message">چیزی که دنبالشی اینجا نیست !</div>
+    <a href="{% url 'main:home' %}" class="btn btn-home">برگرد به خانه</a>
+</div>
+
+
+
+
+
+
+    {% endblock %}
+
+{% block jsFiles %}
+  {% comment %}
+  javascript files related to this page gose here
+  {% endcomment %}
+    <!-- Javascript -->
+
+{% endblock %}

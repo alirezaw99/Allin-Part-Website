@@ -1,0 +1,29 @@
+
+.error-code {
+    font-size: 11rem;
+    font-weight: bold;
+    color: #990000;
+    font-style:italic;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.error-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.btn-home {
+    background-color: #990000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.btn-home:hover {
+    background-color: #660000;
+    color: #fff;
+}
+.illustration {
+    font-size: 6rem;
+}
