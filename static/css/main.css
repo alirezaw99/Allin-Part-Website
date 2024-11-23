@@ -15,6 +15,11 @@
   font-family: far;
   src: local("far"), url("../Fonts/far.ttf") format("truetype");
 }
+*::selection{
+  background:#990000;
+  color:white;
+}
+
 body {
   font-family: vazir;
 }
