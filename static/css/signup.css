@@ -1,0 +1,60 @@
+
+.card-header{
+    background-color: #990000;
+}
+.card{
+    max-width: 500px;
+    overflow: hidden;
+    border:none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-inside{
+    border:1px solid #990000 ;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.card-header > h3 {
+    margin-top: 10px;
+    font-style: bolder;
+    font-size: 30px;
+    border:none !important;
+}
+.card-body{
+    border:none !important;
+}
+.signup-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+
+.btn-primary {
+    background-color: #990000;
+    border-color: #990000;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #990000e4;
+    border-color: #550000;
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+}
+
+.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+.already-signup > span > a{
+    color: #990000;
+    padding: 2px;
+}

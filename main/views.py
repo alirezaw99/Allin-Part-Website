@@ -78,3 +78,6 @@ def parts_detail_view(request, slug):
     context = {'part':part, 'images':images, 'comments':comments}
     
     return render(request, 'part_single.html', context)
+
+def signup_view(request):
+    return render(request, 'signup.html')

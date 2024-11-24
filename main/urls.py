@@ -28,4 +28,5 @@ urlpatterns = [
     path('search/', search_result_view, name='search'),
     path('categories/<slug:slug>',  parts_list_view, name='categories'),
     path('part_detail/<slug:slug>', parts_detail_view, name='part_detail'),
+    path('signup/', signup_view, name='signup'),
 ]
