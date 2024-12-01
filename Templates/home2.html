@@ -1,0 +1,262 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load humanize %}
+{% load jalali_tags %}
+
+{% block cssFiles %}
+{% comment %}
+  linked css files related to this page
+{% endcomment %}
+<link rel="stylesheet" href=".{% static './css/font-awesome.css' %}" />
+<link rel="stylesheet" href=".{% static './css/owl.carousel.css' %}" />
+<link rel="stylesheet" href=".{% static './css/owl.theme.default.css' %}" />
+<link rel="stylesheet" href=".{% static './css/style.css' %}" />
+<link rel="stylesheet" href="{% static './css/main.css' %}" />
+<link rel="stylesheet" href=".{% static './css/home.css' %}" />
+
+{% endblock %}
+
+{% block body %}
+{% comment %}
+the body part goes here
+{% endcomment %}
+
+<!-- Slider Section -->
+<section class="slider mb-4">
+  <div class="container container-fluid">
+    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner rounded-5">
+        <div class="carousel-item bg-body active">
+          <img src="{% static "./images/slider/banner1-crimson.jpg" %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static "./images/slider/banner2.jpg" %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static "./images/slider/banner3.jpg" %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static "./images/slider/banner4.jpg" %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static "./images/slider/banner5.jpg" %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static "./images/slider/banner6.jpg" %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+      </div>
+      <div class="carousel-indicators justify-content-center">
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
+      </div>
+    </div>
+  </div>
+  <!-- Category Cards Section -->
+</section>
+
+
+
+<!--Allin Part Animation-->
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="text-center m-4 text-nowrap ">
+      <img src="{% static "./images/allin-writing.png" %}" class="allin-writing" alt="can't load image">
+    </div>
+  </div>
+</div>
+
+<!-- Typing Text Animation -->
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="text-center m-4 text-nowrap">
+      <h1 class="typed-out">تنها نمایندگی رسمی فروش قطعات شرکت پاکشوما</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Ctegories Section -->
+<section id="categories" class="">
+  <div class="container-md container-fluid">
+    <div class="category-cards card-group row row-cols-7 gx-5 w-100">
+      
+      
+        {% for cat in category %}
+        <div class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
+          <a href="{% url 'main:categories' cat.slug %}" class="card-link">
+            <div class="card card-custom align-items-center">
+              <div class="card-image p-4" >
+                <img
+                  src="{{cat.icon.url}}"
+                  class="card-img-top img-fluid "
+                  alt="can't load image"/>
+              </div>
+              <div class="card-body pb-0">
+                <h5 class="card-title text-center">
+                  <a class="cat-link" href="{% url 'main:categories' cat.slug %}">{{cat.name_fa}}</a>
+                </h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        
+      
+    </div>
+  </div>
+</section>
+
+<div class="background-white">
+  <div class="curve">
+  </div>
+
+<!-- Super Deals -->
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center mx-3 my-3">
+        <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#AA98A9'>پیشنهاد</span> شگفت انگیز</strong></h2>  
+      </div>
+    <div class="row">
+       <div class="col-md-12">
+          <div class="one-slider">
+             <div class="owl-carousel owl-theme ov1">
+                 {% for dis in discounts %}
+                <div class="item">
+                   <figure>
+                      <a href="{% url 'main:part_detail' dis.slug %}">
+                      <img src="{{dis.image_tumbnail.url}}" class="w-100" /></a>
+                   </figure>
+                   <h5>{{dis.name}}</h5>
+                   <span>{{dis.price|intcomma}} تومان </span>
+                   <p>{{dis.discounted_price|intcomma}} تومان </p>
+                </div>
+                {% endfor %}
+             </div>
+          </div>
+       </div>
+    </div>
+    <hr class="my-5">
+</div>
+
+
+ <!-- Category Parts -->
+{% for cat in category %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="two-slider">
+                  <h4>{{cat.name_fa}}</h4>
+                <div class="owl-carousel owl-theme ov2">
+                    {% for part in parts %}
+                    {% if part.category == cat %}
+                     <div class="item">
+                        <figure>
+                           <a href="{% url 'main:part_detail' part.slug %}">
+                            <img src="{{part.image_tumbnail.url}}" class="w-100" /></a>
+                        </figure>
+                        <h5>{{part.name}}</h5>
+                        <span>{{part.price|intcomma}} تومان</span>
+                     </div>
+                     {% endif %}
+                     {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+<!-- Blog -->
+<div class="container">
+    <hr class="my-3">
+      <div class="d-flex justify-content-center align-items-center mx-3 my-3">
+        <h5 class="my-3">بیشتر بخوانید : جدیدترین مقالات </h5>
+      </div>
+    <div class="row">
+       
+        {% for post in blog %}
+        <div class="col-md-4">
+          <div class="blog-content">
+             <figure>
+                <img src="{{post.image.url}}" class="w-100">
+             </figure>
+             <h5><i class="fa fa-title"></i>{{post.title}}</h5>
+             <p>{{post.content|truncatewords:30|safe}}</p>
+             <ul>
+                <li><i class="fa fa-calendar-o"></i> نوشته شده در : {{post.created_date|to_jalali:"%Y/%m/%d"}}</li>
+                <li><i class="fa fa-user-o"></i> نویسنده : {{post.author.first_name}} {{post.author.last_name}}</li>
+             </ul>
+             <a href="{% url 'blog:blog_single' post.id %}" class="mybtn blog-link"><i class="fa fa-continuous blog-link"></i>ادامه مطلب&raquo;</a>	
+          </div>
+       </div>
+       {% endfor %}
+    </div>
+</div>
+
+
+<!---------------------------------->
+
+
+
+
+
+
+
+
+
+
+ {% endblock %}
+    </div>
+{% block jsFiles %}
+  {% comment %}
+  javascript files related to this page gose here
+  {% endcomment %}
+    <!-- Javascript -->
+    <script src="{% static './js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static './js/jquery.simple.timer.js' %}"></script>
+    <script src="{% static './js/owl.carousel.min.js' %}"></script>
+    <script src="{% static './js/js.js' %}"></script>
+
+{% endblock %}

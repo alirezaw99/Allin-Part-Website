@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.db.models import Q
 from .models import *
+from blog.models import Blog
 from .forms import ContactForm, CommentForm
 from django.contrib import messages
 
@@ -11,10 +12,11 @@ def home_view(request):
     category = Category.objects.all().order_by('created_date')
     parts = Part.objects.filter(popular=1)
     discounts = Part.objects.filter(is_onsale=1)
+    blog = Blog.objects.all().order_by('created_date')[:2]
     
-    context = {'category':category, 'parts':parts, 'discounts':discounts}
+    context = {'category':category, 'parts':parts, 'discounts':discounts, 'blog':blog}
     
-    return render(request, 'home.html', context)
+    return render(request, 'home2.html', context)
 
 def contact_view(request):
     if request.method == 'POST':
