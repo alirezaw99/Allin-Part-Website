@@ -372,6 +372,31 @@ margin-right:7px;
     object-fit: contain;
 }
 /*-----------------------------*/
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product-name {
+    font-size: 16px;
+    line-height: 1.2;
+    white-space: normal; /* Allows text wrapping */
+    overflow: visible; /* Ensures full text is displayed */
+    text-overflow: unset;
+    margin: 0;
+    padding: 0 10px;
+    word-wrap: break-word; /* Breaks long words if necessary */
+    max-height: 3.6em; /* Adjust this for a consistent height */
+}
+
+.product-price {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
 .one-slider{
 width:100%;
 min-height:100px;

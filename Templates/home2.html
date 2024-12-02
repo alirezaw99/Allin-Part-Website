@@ -195,9 +195,11 @@ the body part goes here
                            <a href="{% url 'main:part_detail' part.slug %}">
                             <img src="{{part.image_tumbnail.url}}" class="w-100" /></a>
                         </figure>
-                        <h5>{{part.name}}</h5>
-                        <span>{{part.price|intcomma}} تومان</span>
-                     </div>
+                        <div class="product-details">
+                        <h5 class="product-name">{{part.name}}</h5>
+                        <span class="product-price">{{part.price|intcomma}} تومان</span>
+                        </div>
+                      </div>
                      {% endif %}
                      {% endfor %}
                 </div>
