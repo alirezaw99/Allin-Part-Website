@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from main.sitemaps import StaticViewSitemap, PartSitemap, CategorySitemap, SubCategorySitemap
+from blog.sitemaps import BlogSitemap
 
 
 sitemaps = {
@@ -27,6 +28,7 @@ sitemaps = {
     "part" : PartSitemap,
     "category": CategorySitemap,
     "sub_cateogy": SubCategorySitemap,
+    'blog': BlogSitemap,
 }
 
 urlpatterns = [

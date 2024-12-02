@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 # Create your models here.
 class Tag(models.Model):
@@ -21,4 +23,8 @@ class Blog(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        """Return the URL for a single blog post."""
+        return reverse('blog:blog_single', kwargs={'id': self.id})
     
