@@ -51,6 +51,12 @@ nav{
   white-space: nowrap;
 }
 
+.btn-primary{
+  background-color: #990000 !important;
+  border-color: #990000;
+  border-radius:60px;
+}
+
 /* Dropdown */
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {

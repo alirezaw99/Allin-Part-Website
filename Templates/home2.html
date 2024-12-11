@@ -165,7 +165,7 @@ the body part goes here
                 <div class="item">
                    <figure>
                       <a href="{% url 'main:part_detail' dis.slug %}">
-                      <img src="{{dis.image_tumbnail.url}}" class="w-100" /></a>
+                      <img src="{{dis.image_tumbnail.url}}" class="w-100" alt="{{dis.name}}" /></a>
                    </figure>
                    <h5>{{dis.name}}</h5>
                    <span>{{dis.price|intcomma}} تومان </span>
@@ -193,7 +193,7 @@ the body part goes here
                      <div class="item">
                         <figure>
                            <a href="{% url 'main:part_detail' part.slug %}">
-                            <img src="{{part.image_tumbnail.url}}" class="w-100" /></a>
+                            <img src="{{part.image_tumbnail.url}}" class="w-100" alt="{{part.name}}" /></a>
                         </figure>
                         <div class="product-details">
                         <h5 class="product-name">{{part.name}}</h5>
