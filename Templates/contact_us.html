@@ -82,7 +82,7 @@
       <div class="container">
         <hr class="mt-5 pt-5"> 
         <p class=""><strong> درصورت تمایل جهت بهبود خدمات لطفا انتقادات ، پیشنهادات و یا درخواست خود را از طریق فرم زیر ارسال فرمایید.</strong></p>  
-        <form class="row g-5 mt-4" action="{% url 'main:contact' %}" method="post">
+        <form class="row g-5 mt-4" action="{% url 'main:contact' %}" method="post" id="contactForm">
           {% csrf_token %}
           <div class="col-md-6 mt-3">
             <label for="inputname" class="form-label">نام و نام خانوادگی</label>
@@ -99,6 +99,12 @@
           <div class="col-12 mt-3">
             <label for="textinput" class="form-label">انتقاد و پیشنهاد</label>
             <textarea name="message" class="form-control" id="textinput" rows="5"></textarea>
+          </div>
+          <div class="col-12 mt-3">
+            <label for="captchaInput" class="form-label captchaQuestion">سوال امنیتی :</label>
+            <label for="captchaInput" id="captchaQuestion" class="form-label captchaQuestion"></label>
+            <input name="question" type="text" class="form-control " id="captchaInput" required placeholder="">
+            <div id="captchaError" style="color: red; display: none;"></div>
           </div>
           <div class="col-12 mt-3">
             <button class="btn btn-primary" type="submit">ارسال فرم</button>
@@ -123,6 +129,65 @@
     {% endblock %}
 
     {% block jsFiles %}
+<script>
+// Generate random numbers and operation
+function generateQuestion() {
+  let num1 = Math.floor(Math.random() * 10) + 1;
+  let num2 = Math.floor(Math.random() * 10) + 1;
+
+  // Ensure the result is always positive
+  if (num1 < num2) {
+      [num1, num2] = [num2, num1];
+  }
+
+  const operations = ['+', '-'];
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+
+  const questionText = `${convertNumberToWords(num1)} ${operation} ${convertNumberToWords(num2)}`;
+  const correctAnswer = operation === '+' ? num1 + num2 : num1 - num2;
+
+  return { questionText, correctAnswer };
+}
+
+// Convert numbers to Persian words
+function convertNumberToWords(num) {
+  const words = [
+      'صفر', 'یک', 'دو', 'سه', 'چهار', 'پنج', 'شش', 'هفت', 'هشت', 'نه', 'ده'
+  ];
+  return words[num];
+}
+
+// Inject question into the form and handle validation
+function setupCaptcha() {
+  const captchaQuestion = document.getElementById('captchaQuestion');
+  const captchaInput = document.getElementById('captchaInput');
+  const captchaError = document.getElementById('captchaError');
+  const form = document.getElementById('contactForm');
+
+  const { questionText, correctAnswer } = generateQuestion();
+  captchaQuestion.textContent = questionText;
+
+  form.addEventListener('submit', function (event) {
+      const userAnswer = parseInt(captchaInput.value, 10);
+
+      if (isNaN(userAnswer)) {
+          event.preventDefault();
+          captchaError.textContent = 'لطفا به صورت عددی پاسخ دهید';
+          captchaError.style.display = 'block';
+      } else if (userAnswer !== correctAnswer) {
+          event.preventDefault();
+          captchaError.textContent = 'پاسخ نادرست است. مجدد تلاش کنید';
+          captchaError.style.display = 'block';
+      } else {
+          captchaError.style.display = 'none';
+      }
+  });
+}
+
+// Initialize captcha on page load
+document.addEventListener('DOMContentLoaded', setupCaptcha);
+
+</script>
       {% comment %}
       javascript files related to this page gose here
       {% endcomment %}
