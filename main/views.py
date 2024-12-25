@@ -12,7 +12,7 @@ def home_view(request):
     category = Category.objects.all().order_by('created_date')
     parts = Part.objects.filter(popular=1)
     discounts = Part.objects.filter(is_onsale=1)
-    blog = Blog.objects.all().order_by('created_date')[:2]
+    blog = Blog.objects.all().order_by('-created_date')[:3]
     
     context = {'category':category, 'parts':parts, 'discounts':discounts, 'blog':blog}
     
