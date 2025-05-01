@@ -26,7 +26,6 @@ SITE_ID = config('SITE_ID', cast=int, default=1)
 #     }
 
 
-<<<<<<< Updated upstream
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -46,7 +45,6 @@ DATABASES = {
    }
 }
 
-=======
 
 # DATABASES = {
 #    'default': {
@@ -59,7 +57,6 @@ DATABASES = {
 #    }
 # }
 
->>>>>>> Stashed changes
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
