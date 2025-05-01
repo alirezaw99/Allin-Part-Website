@@ -45,6 +45,18 @@ DATABASES = {
    }
 }
 
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': config('NAME', default='postgre'),
+#        'USER': config('USER', default='postgre'),
+#        'PASSWORD': config('PASSWORD', default='postgre'),
+#        'HOST': config('HOST', default='postgre'),
+#        'PORT': config('PORT', default='5432'),
+#    }
+# }
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -68,3 +80,11 @@ CSRF_COOKIE_SECURE              = False
 SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
+
+SUMMERNOTE_CONFIG = {
+    'iframe': True,  # Use iframe mode for better isolation
+    'summernote': {
+        'width': '100%',
+        'height': '480',
+    },
+}
