@@ -34,18 +34,6 @@ SITE_ID = config('SITE_ID', cast=int, default=1)
 # }
 
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': config('NAME', default='postgre'),
-       'USER': config('USER', default='postgre'),
-       'PASSWORD': config('PASSWORD', default='postgre'),
-       'HOST': config('HOST', default='postgre'),
-       'PORT': config('PORT', default='5432'),
-   }
-}
-
-
 # DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
@@ -56,6 +44,18 @@ DATABASES = {
 #        'PORT': config('PORT', default='5432'),
 #    }
 # }
+
+
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': config('NAME', default='postgres'),
+       'USER': config('DB_USER', default='postgre'),
+       'PASSWORD': config('PASSWORD', default='postgre'),
+       'HOST': config('HOST', default='postgre'),
+       'PORT': config('PORT', default='5432'),
+   }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
