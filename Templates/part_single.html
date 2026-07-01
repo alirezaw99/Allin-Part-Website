@@ -76,25 +76,10 @@
                             <p class="mb-0">{{ part.description }}</p>
                         </div>
 
-                        {% if part.is_onsale == 1 and "لوازم جانبی" not in part.category.name_fa %}
-                            <div class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between flex-wrap gap-2">
-                                <span class="h4 me-2 pe-2 text-nowrap mb-0">قیمت : </span>
-                                <div class="text-center">
-                                    <span class="h6 px-1 text-decoration-line-through d-inline-block" style="color: #e5e4e2">{{ part.price|intcomma }} تومان</span>
-                                    <span class="h4 px-1 d-inline-block mb-0">{{ part.discounted_price|intcomma }} تومان</span>
-                                </div>
-                            </div>
-                        {% elif part.popular == 1 and "لوازم جانبی" not in part.category.name_fa %}
-                            <div class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between flex-wrap gap-2">
-                                <span class="h4 me-2 pe-2 text-nowrap mb-0">قیمت : </span>
-                                <span class="h4 px-1 mb-0">{{ part.price|intcomma }} تومان</span>
-                            </div>
-                        {% else %}
-                            <div class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between flex-wrap gap-2">
-                                <span class="h4 me-2 pe-2 text-nowrap mb-0">قیمت : </span>
-                                <span class="h4 px-1 mb-0">استعلام بگیرید</span>
-                            </div>
-                        {% endif %}
+                        <div class="pricebox h-0 my-3 p-4 rounded-5 d-flex align-items-center justify-content-between flex-wrap gap-2">
+                            <span class="h4 me-2 pe-2 text-nowrap mb-0">قیمت : </span>
+                            <span class="h4 px-1 mb-0">استعلام بگیرید</span>
+                        </div>
 
                         <p class="order-parag d-inline-block my-4 mb-lg-5">
                             جهت خرید <strong>{{ part.name }}</strong>، استعلام قیمت و یا دریافت مشاوره جهت خرید
