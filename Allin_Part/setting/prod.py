@@ -1,71 +1,71 @@
-from decouple import config
 import os
-from pathlib import Path    
+
 import dj_database_url
+from decouple import Csv, config
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
-from Allin_Part.settings import *
-# Initialise environment variables
+
+from Allin_Part.settings import *  # noqa: F403
 
 load_dotenv()
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY' ,default= 'django-insecure-*0%#&!+!+&@44%+646*=a+-^@*n7#694+55423@+*@#+-+*@')
+SECRET_KEY = config("SECRET_KEY", default="")
+if not SECRET_KEY:
+    raise ImproperlyConfigured("Set SECRET_KEY in the environment for production.")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool, default=False)
+DEBUG = config("DEBUG", cast=bool, default=False)
 
+_allowed = config(
+    "ALLOWED_HOSTS", default="localhost,127.0.0.1", cast=Csv()
+)
+ALLOWED_HOSTS = _allowed if _allowed else ["localhost"]
 
-ALLOWED_HOSTS = ["*"]
+SITE_ID = config("SITE_ID", cast=int, default=1)
 
-
-#Site ID
-SITE_ID = config('SITE_ID', cast=int, default=1)
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+database_url = os.environ.get("DATABASE_URL") or config("DATABASE_URL", default="")
+if not database_url:
+    raise ImproperlyConfigured(
+        "Set DATABASE_URL (or pass it in the OS environment)."
+    )
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-    }
+    "default": dj_database_url.parse(
+        database_url,
+        conn_max_age=config("DB_CONN_MAX_AGE", cast=int, default=600),
+        ssl_require=config("DATABASE_SSL_REQUIRE", cast=bool, default=False),
+    )
+}
 
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': config('NAME', default='postgre'),
-#        'USER': config('USER', default='postgre'),
-#        'PASSWORD': config('PASSWORD', default='postgre'),
-#        'HOST': config('HOST', default='postgre'),
-#        'PORT': config('PORT', default='5432'),
-#    }
-# }
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
-
-STATIC_ROOT = BASE_DIR / 'staticfiles/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+STATIC_ROOT = BASE_DIR / "staticfiles/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-GUNICORN_TIMEOUT=60
+SECURE_SSL_REDIRECT = config("SECURE_SSL_REDIRECT", cast=bool, default=True)
+SESSION_COOKIE_SECURE = config("SESSION_COOKIE_SECURE", cast=bool, default=True)
+CSRF_COOKIE_SECURE = config("CSRF_COOKIE_SECURE", cast=bool, default=True)
 
-#http settings
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+if config("BEHIND_REVERSE_PROXY", cast=bool, default=False):
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    USE_X_FORWARDED_HOST = True
 
-#HSTS settings
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+CSRF_TRUSTED_ORIGINS = config(
+    "CSRF_TRUSTED_ORIGINS", default="", cast=Csv()
+)
 
-#more Security settings
+if SECURE_SSL_REDIRECT:
+    SECURE_HSTS_SECONDS = config("SECURE_HSTS_SECONDS", cast=int, default=31536000)
+    SECURE_HSTS_PRELOAD = config("SECURE_HSTS_PRELOAD", cast=bool, default=True)
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = config(
+        "SECURE_HSTS_INCLUDE_SUBDOMAINS", cast=bool, default=True
+    )
+else:
+    SECURE_HSTS_SECONDS = 0
+    SECURE_HSTS_PRELOAD = False
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False

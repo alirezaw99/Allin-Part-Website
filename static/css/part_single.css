@@ -1,3 +1,5 @@
+/* Part detail — aligned with parts_list / site cards (crimson border) */
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -19,60 +21,65 @@
   object-fit: cover;
 }
 
-.swiper {
+.part-single-gallery .swiper {
   width: 100%;
-  height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.swiper-slide {
+.part-single-gallery .swiper-slide {
   background-size: cover;
   background-position: center;
 }
 
-.mySwiper2 {
+.part-single-gallery .mySwiper2 {
   height: 80%;
   width: 100%;
 }
 
-.mySwiper {
+.part-single-gallery .mySwiper {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
 }
 
-.mySwiper .swiper-slide {
+.part-single-gallery .mySwiper .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
 }
 
-.mySwiper .swiper-slide-thumb-active {
+.part-single-gallery .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
 
-.swiper-slide img {
+.part-single-gallery .swiper-slide img {
   display: block;
   max-width: 450px;
   max-height: 450px;
   object-fit: cover;
 }
 
-.swiper_tumbnail{
-  height :100px !important;
+.part-single-gallery .swiper_tumbnail {
+  height: 100px !important;
   width: 100px !important;
 }
 
-.pricebox{
+.pricebox {
   background: hsla(5, 100%, 38%, 1);
-  background: linear-gradient(360deg, hsla(5, 100%, 38%, 1) 0%, hsla(348, 100%, 31%, 1) 100%);
-  background: -moz-linear-gradient(360deg, hsla(5, 100%, 38%, 1) 0%, hsla(348, 100%, 31%, 1) 100%);
-  background: -webkit-linear-gradient(360deg, hsla(5, 100%, 38%, 1) 0%, hsla(348, 100%, 31%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C41000", endColorstr="#9F0020", GradientType=1 );
-  color : #F5F5F5;
+  background: linear-gradient(
+    360deg,
+    hsla(5, 100%, 38%, 1) 0%,
+    hsla(348, 100%, 31%, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#C41000", endColorstr="#9F0020", GradientType=1);
+  color: #f5f5f5;
 }
 
-.order-parag{
+.order-parag {
   font-size: 1.3rem;
+}
+
+.part-single-comment .user-icon {
+  flex-shrink: 0;
 }

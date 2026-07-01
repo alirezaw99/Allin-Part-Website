@@ -6,6 +6,7 @@ django-environ==0.11.2
 django-jalali-date==1.1.3  # No recent update; last known compatible version
 django-robots==6.1
 django-summernote==0.8.20.0  # Latest compatible version
+gunicorn==23.0.0
 jalali_core==1.0.0         # No recent update
 jdatetime==5.1.0           # Minor update; compatible
 lxml==5.2.1                # Latest stable as of Apr 2025

@@ -4,272 +4,300 @@
 {% load jalali_tags %}
 
 {% block cssFiles %}
-    {% comment %}
+{% comment %}
   linked css files related to this page
 {% endcomment %}
-    <link rel="stylesheet" href=".{% static './css/font-awesome.css' %}"/>
-    <link rel="stylesheet" href=".{% static './css/owl.carousel.css' %}"/>
-    <link rel="stylesheet" href=".{% static './css/owl.theme.default.css' %}"/>
-    <link rel="stylesheet" href=".{% static './css/style.css' %}"/>
-    <link rel="stylesheet" href="{% static './css/main.css' %}"/>
-    <link rel="stylesheet" href=".{% static './css/home.css' %}"/>
-
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
 {% endblock %}
 
 {% block body %}
-    {% comment %}
+{% comment %}
 the body part goes here
 {% endcomment %}
 
-    <!-- Slider Section -->
-    <section class="slider mb-4">
-        <div class="container container-fluid">
-            <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-
-                <div class="carousel-inner rounded-5">
-                    <div class="carousel-item bg-body active">
-                        <img src="{% static "./images/slider/banner1-crimson.jpg" %}" class="d-block
-          img-fluid" alt="can't load image"/>
-                    </div>
-                    <div class="carousel-item bg-body">
-                        <img src="{% static "./images/slider/banner2.jpg" %}" class="d-block
-          img-fluid" alt="can't load image"/>
-                    </div>
-                    <div class="carousel-item bg-body">
-                        <img src="{% static "./images/slider/banner3.jpg" %}" class="d-block
-          img-fluid" alt="can't load image"/>
-                    </div>
-                    <div class="carousel-item bg-body">
-                        <img src="{% static "./images/slider/banner4.jpg" %}" class="d-block
-          img-fluid" alt="can't load image"/>
-                    </div>
-                    <div class="carousel-item bg-body">
-                        <img src="{% static "./images/slider/banner5.jpg" %}" class="d-block
-          img-fluid" alt="can't load image"/>
-                    </div>
-                    <div class="carousel-item bg-body">
-                        <img src="{% static "./images/slider/banner6.jpg" %}" class="d-block
-          img-fluid" alt="can't load image"/>
-                    </div>
-                </div>
-                <div class="carousel-indicators justify-content-center">
-                    <button
-                            type="button"
-                            data-bs-target="#carouselIndicators"
-                            data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Slide 1"
-                    ></button>
-                    <button
-                            type="button"
-                            data-bs-target="#carouselIndicators"
-                            data-bs-slide-to="1"
-                            aria-label="Slide 2"
-                    ></button>
-                    <button
-                            type="button"
-                            data-bs-target="#carouselIndicators"
-                            data-bs-slide-to="2"
-                            aria-label="Slide 3"
-                    ></button>
-                    <button
-                            type="button"
-                            data-bs-target="#carouselIndicators"
-                            data-bs-slide-to="3"
-                            aria-label="Slide 4"
-                    ></button>
-                    <button
-                            type="button"
-                            data-bs-target="#carouselIndicators"
-                            data-bs-slide-to="4"
-                            aria-label="Slide 5"
-                    ></button>
-                    <button
-                            type="button"
-                            data-bs-target="#carouselIndicators"
-                            data-bs-slide-to="5"
-                            aria-label="Slide 6"
-                    ></button>
-                </div>
-            </div>
+<!-- Slider Section -->
+<section class="slider mb-4">
+  <div class="container container-fluid">
+    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner rounded-5">
+        <div class="carousel-item bg-body active">
+          <img src="{% static 'images/slider/banner1-crimson.jpg' %}" class="d-block
+          img-fluid" alt="can't load image" />
         </div>
-        <!-- Category Cards Section -->
-    </section>
-
-
-
-    <!--Allin Part Animation-->
-    <div class="container">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="text-center m-4 text-nowrap ">
-                <img src="{% static "./images/allin-writing.png" %}" class="allin-writing" alt="can't load image">
-            </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static 'images/slider/banner2.jpg' %}" class="d-block
+          img-fluid" alt="can't load image" />
         </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static 'images/slider/banner3.jpg' %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static 'images/slider/banner4.jpg' %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static 'images/slider/banner5.jpg' %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+        <div class="carousel-item bg-body">
+          <img src="{% static 'images/slider/banner6.jpg' %}" class="d-block
+          img-fluid" alt="can't load image" />
+        </div>
+      </div>
+      <div class="carousel-indicators justify-content-center">
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          data-bs-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
+      </div>
     </div>
+  </div>
+  <!-- Category Cards Section -->
+</section>
 
-    <!-- Typing Text Animation -->
-    <div class="container">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="text-center m-4 text-nowrap">
-                <h1 class="typed-out">تنها نمایندگی رسمی فروش قطعات شرکت پاکشوما</h1>
-            </div>
-        </div>
+
+
+<!--Allin Part Animation-->
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="text-center m-4 text-nowrap ">
+      <img src="{% static 'images/allin-writing.png' %}" class="allin-writing" alt="can't load image">
     </div>
-
-    <!-- Ctegories Section -->
-    <section id="categories" class="">
-        <div class="container-md container-fluid">
-            <div class="category-cards card-group row row-cols-7 gx-5 w-100">
-
-
-                {% for cat in category %}
-                    <div class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
-                        <a href="{% url 'main:categories' cat.slug %}" class="card-link">
-                            <div class="card card-custom align-items-center">
-                                <div class="card-image p-4">
-                                    <img
-                                            src="{{ cat.icon.url }}"
-                                            class="card-img-top img-fluid "
-                                            alt="can't load image"/>
-                                </div>
-                                <div class="card-body pb-0">
-                                    <h5 class="card-title text-center">
-                                        <a class="cat-link"
-                                           href="{% url 'main:categories' cat.slug %}">{{ cat.name_fa }}</a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
-
-
-            </div>
-        </div>
-    </section>
-
-    <div class="background-white">
-    <div class="curve">
-    </div>
-
-    <!-- Super Deals -->
-    <div class="container">
-        <div class="d-flex justify-content-center align-items-center mx-3 my-3">
-            {#        <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#AA98A9'>پیشنهاد</span> شگفت انگیز</strong></h2>  #}
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="one-slider">
-                    <div class="owl-carousel owl-theme ov1">
-                        {% for dis in discounts %}
-                            <div class="item">
-                                <figure>
-                                    <a href="{% url 'main:part_detail' dis.slug %}">
-                                        <img src="{{ dis.image_tumbnail.url }}" class="w-100" alt="{{ dis.name }}"/></a>
-                                </figure>
-                                <h5>{{ dis.name }}</h5>
-                                {#                   <span>{{dis.price|intcomma}} تومان </span>#}
-                                {#                   <p>{{dis.discounted_price|intcomma}} تومان </p>#}
-                                <p>موجودی و قیمت را استعلام بگیرید</p>
-
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="my-5">
-    </div>
-
-
-    <!-- Category Parts -->
-    {% for cat in category %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="two-slider">
-                        <h4>{{ cat.name_fa }}</h4>
-                        <div class="owl-carousel owl-theme ov2">
-                            {% for part in parts %}
-                                {% if part.category == cat %}
-                                    <div class="item">
-                                        <figure>
-                                            <a href="{% url 'main:part_detail' part.slug %}">
-                                                <img src="{{ part.image_tumbnail.url }}" class="w-100"
-                                                     alt="{{ part.name }}"/></a>
-                                        </figure>
-                                        <div class="product-details">
-                                            <h5 class="product-name">{{ part.name }}</h5>
-                                            {% if "لوازم جانبی" in part.category.name_fa %}
-                                                <span>استعلام بگیرید</span>
-                                            {% else %}
-                                                <span class="product-price">{{ part.price|intcomma }} تومان</span>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-
-
-    <!-- Blog -->
-    <div class="container">
-        <hr class="my-3">
-        <div class="d-flex justify-content-center align-items-center mx-3 my-3">
-            <h5 class="my-3">بیشتر بخوانید : جدیدترین مقالات </h5>
-        </div>
-        <div class="row">
-
-            {% for post in blog %}
-                <div class="col-md-4">
-                    <div class="blog-content">
-                        <figure>
-                            <img src="{{ post.image.url }}" class="w-100">
-                        </figure>
-                        <h5><i class="fa fa-title"></i>{{ post.title }}</h5>
-                        <p>{{ post.content|truncatewords:30|safe }}</p>
-                        <ul>
-                            <li><i class="fa fa-calendar-o"></i> نوشته شده در
-                                : {{ post.created_date|to_jalali:"%Y/%m/%d" }}</li>
-                            <li><i class="fa fa-user-o"></i> نویسنده
-                                : {{ post.author.first_name }} {{ post.author.last_name }}</li>
-                        </ul>
-                        <a href="{% url 'blog:blog_single' post.id %}" class="mybtn blog-link"><i
-                                class="fa fa-continuous blog-link"></i>ادامه مطلب&raquo;</a>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-
-
-    <!---------------------------------->
-
-
-
-
-
-
-
-
-
-
-{% endblock %}
+  </div>
 </div>
+
+<!-- Typing Text Animation -->
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="text-center m-4 text-nowrap">
+      <h1 class="typed-out">تنها نمایندگی رسمی فروش قطعات شرکت پاکشوما</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Ctegories Section -->
+<section id="categories" class="">
+  <div class="container-md container-fluid">
+    <div class="category-cards card-group row row-cols-7 gx-5 w-100">
+      
+      
+        {% for cat in category %}
+        <div class="col category-card d-flex align-items-center justify-content-center p-0 mx-2">
+          <a href="{% url 'main:categories' cat.slug %}" class="card-link">
+            <div class="card card-custom align-items-center">
+              <div class="card-image p-4" >
+                <img
+                  src="{{cat.icon.url}}"
+                  class="card-img-top img-fluid "
+                  alt="can't load image"/>
+              </div>
+              <div class="card-body pb-0">
+                <h5 class="card-title text-center">
+                  <a class="cat-link" href="{% url 'main:categories' cat.slug %}">{{cat.name_fa}}</a>
+                </h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        
+      
+    </div>
+  </div>
+</section>
+
+<div class="background-white">
+  <div class="curve">
+  </div>
+
+<!-- Discounted Products -->
+<section class="discounted">
+  <div class="container-md container-fluid pt-5">
+    <div class="d-flex justify-content-between align-items-center mx-3">
+      <h2 style='color:#DC143C' class="m-2"><strong><span style='color:#AA98A9'>پیشنهاد</span> شگفت انگیز</strong></h2>  
+    </div>
+    <hr />
+    <div class="slider-wraper slider-wraper-custom p-2 my-4 bg-gradient">
+      <div class="swiper-container swiper-container-custom swiper px-5 bg-gradient">
+        <div #swiperRef="#" class="slide-content mySwiper m-1">
+          <div class="swiper-wrapper p-2">
+            {% for dis in discounts %}
+            
+            <div class=" swiper-slide ">
+              <a class="card-link text-decoration-none text-dark h-100" href="{% url 'main:part_detail' dis.slug %}">
+                <div class='card text-center p-1 h-100'>
+                  <div class="card-header">
+                    <small class="">فروش ویژه</small>
+                  </div>
+                  <img
+                    src="{{dis.image_tumbnail.url}}"
+                    class="card-img-top img-fluid p-1"
+                    alt="failed to load image"/>
+                
+                  <div class="card-body swiper-slide h-25 d-flex align-items-end justify-content-center">
+                    <div class='w-100'>
+                     <h5 class="card-title">{{dis.name}} </h5>
+                      <hr />
+                      <div class="card-text">
+                         <small class="product-price mt-1 text-danger text-decoration-line-through"><strong>{{dis.price|intcomma}} تومان</strong></small>
+                         <p class="product-price mt-1"><strong>{{dis.discounted_price|intcomma}} تومان</strong></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {% endfor %}
+          </div>
+          <div class="swiper-button-next swiper-nav-btn d-none d-md-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="0.5em"
+              viewBox="0 0 320 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-prev swiper-nav-btn d-none d-md-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="0.5em"
+              viewBox="0 0 320 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Category Products -->
+{% for cat in category %}
+<section class="category">
+  <div class="container-md container-fluid mt-5 pt-3">
+    <div class="d-flex justify-content-between align-items-center mx-3">
+      <h1 class="m-2 h2">{{cat.name_fa}}</h1>
+      <a class="text-dark text-decoration-none" href="{% url 'main:categories' cat.slug %}"><strong>مشاهده همه >></strong></a>
+    </div>
+    <hr />
+    <div class="slider-wraper slider-wraper-custom2 p-2 my-4">
+      <div class="swiper-container swiper-container-custom2 swiper px-5">
+        <div #swiperRef="#" class="slide-content mySwiper m-1">
+          <div class="swiper-wrapper p-2">
+            {% for part in parts %}
+            {% if part.category == cat %}
+            
+              <div class=" swiper-slide product-card">
+                <a class="card-link text-decoration-none text-dark" href="{% url 'main:part_detail' part.slug %}">
+                  <div class='card text-center p-1 h-100'>
+                    <img
+                      src="{{part.image_tumbnail.url}}"
+                      class="card-img-top img-fluid p-1"
+                      alt="failed to load image"/>
+                  
+                    <div class="card-body swiper-slide h-25 d-flex align-items-end justify-content-center">
+                      <div class='w-100'>
+                       <h5 class="card-title">{{part.name}} </h5>
+                        <hr />
+                        <div class="card-text">
+                           <p class="product-price mt-1"><strong>{{part.price|intcomma}} تومان</strong></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            {% endif %}
+            {% endfor %}
+          </div>
+        <div class="swiper-button-next swiper-nav-btn d-none d-md-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="0.5em"
+              viewBox="0 0 320 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-prev swiper-nav-btn d-none d-md-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="0.5em"
+              viewBox="0 0 320 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}
+
 {% block jsFiles %}
-    {% comment %}
+  {% comment %}
   javascript files related to this page gose here
   {% endcomment %}
     <!-- Javascript -->
-    <script src="{% static './js/jquery-3.3.1.js' %}"></script>
-    <script src="{% static './js/jquery.simple.timer.js' %}"></script>
-    <script src="{% static './js/owl.carousel.min.js' %}"></script>
-    <script src="{% static './js/js.js' %}"></script>
+    <script src="{% static 'js/swiper.js' %}"></script>
 
 {% endblock %}
+
