@@ -3,8 +3,8 @@ FROM python:3.11-slim-bookworm
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DEFAULT_TIMEOUT=300
+    PIP_DEFAULT_TIMEOUT=300 \
+    PIP_INDEX_URL=https://package-mirror.liara.ir/repository/pypi/simple
 
 WORKDIR /app
 
@@ -24,8 +24,9 @@ RUN apt-get update -o Acquire::Retries=5 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
-RUN pip install --upgrade pip \
-    && pip install --retries 10 --no-cache-dir -r requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --upgrade pip \
+    && pip install --retries 10 -r requirements.txt
 
 COPY . .
 
