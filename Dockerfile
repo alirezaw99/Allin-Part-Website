@@ -13,10 +13,10 @@ WORKDIR /app
 #
 RUN rm -f /etc/apt/sources.list /etc/apt/sources.list.d/debian.sources \
     && cat <<'EOF' > /etc/apt/sources.list
-deb https://debian-main.devneeds.ir bookworm main contrib non-free non-free-firmware
-deb https://debian-security.devneeds.ir bookworm-security main contrib non-free non-free-firmware
-deb https://debian-main.devneeds.ir bookworm-updates main contrib non-free non-free-firmware
-deb https://debian-main.devneeds.ir bookworm-backports main contrib non-free non-free-firmware
+deb http://linux-mirror.liara.ir/repository/debian/ bookworm main contrib non-free non-free-firmware
+deb http://linux-mirror.liara.ir/repository/debian-security/ bookworm-security main contrib non-free non-free-firmware
+deb http://linux-mirror.liara.ir/repository/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb http://linux-mirror.liara.ir/repository/debian/ bookworm-backports main contrib non-free non-free-firmware
 EOF
 
 RUN apt-get update -o Acquire::Retries=5 \
